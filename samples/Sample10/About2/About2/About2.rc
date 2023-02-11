@@ -1,0 +1,43 @@
+// win+ -- About2.rc -- About Box Demonstration Program no. 2
+
+#include <windows.h>
+#include "About2.h"
+
+FrameIdentity ICON About2.ico
+
+FrameIdentity MENU
+{
+ POPUP "&Help"
+  {
+   MENUITEM "&About About2...", MenuItemAbout
+  }
+}
+
+About2 ICON About2.ico
+
+DialogIdentity DIALOG 20, 20, 140, 188
+STYLE WS_POPUP | WS_DLGFRAME
+{
+ CTEXT       "About2" 100,               0,  12, 140,   8
+ ICON        "About2" 101,               8,   8,   0,   0
+ CTEXT       "About Box Demonstration Program" 102, 4,  36, 130,   8
+
+ CTEXT       ""             TextPaint,       68, 54,  60,  60
+ RADIOBUTTON "&Black"       ButtonBlack,     8,  60,  40,  12, WS_TABSTOP | WS_GROUP
+ RADIOBUTTON "B&lue"        ButtonBlue,      8,  72,  40,  12
+ RADIOBUTTON "&Green"       ButtonGreen,     8,  84,  40,  12
+ RADIOBUTTON "Cya&n"        ButtonCyan,      8,  96,  40,  12
+ RADIOBUTTON "&Red"         ButtonRed,       8, 108,  40,  12
+ RADIOBUTTON "&Magenta"     ButtonMagenta,   8, 120,  40,  12
+ RADIOBUTTON "&Yellow"      ButtonYellow,    8, 132,  40,  12
+ RADIOBUTTON "&White"       ButtonWhite,     8, 144,  40,  12
+ RADIOBUTTON "Rec&tangle"   ButtonRectangle, 72, 134,  50,  12, WS_TABSTOP | WS_GROUP
+ RADIOBUTTON "Elli&pse"     ButtonEllipse,   72, 146,  50,  12
+ DEFPUSHBUTTON "OK"         IDOK,             20, 168,  40,  14, WS_GROUP
+ PUSHBUTTON  "Cancel"       IDCANCEL,         80, 168,  40,  14, WS_GROUP
+}
+
+STRINGTABLE
+{
+ FrameIdentity, "About 2 Dialog"
+}

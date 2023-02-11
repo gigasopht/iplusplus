@@ -1,0 +1,36 @@
+// win+ -- GraphicsMenu.rc - Example of Bitmaps in Menus
+
+#include "GraphicsMenu.h"
+
+BitmapIdentityEdit BITMAP EditLabel.bmp
+BitmapIdentityFile BITMAP FileLabel.bmp
+BitmapIdentityFont BITMAP FontLabel.bmp
+BitmapIdentityHelp BITMAP BigHelp.bmp
+
+MenuFile MENU
+{
+ MENUITEM "&New",        MenuItemNew
+ MENUITEM "&Open...",    MenuItemOpen
+ MENUITEM "&Save",       MenuItemSave
+ MENUITEM "Save &As...", MenuItemSaveAs
+}
+
+MenuEdit MENU
+{
+ MENUITEM "&Undo",       MenuItemUndo
+ MENUITEM SEPARATOR
+ MENUITEM "Cu&t",        MenuItemCut
+ MENUITEM "&Copy",       MenuItemCopy
+ MENUITEM "&Paste",      MenuItemPaste
+ MENUITEM "De&lete",     MenuItemDelete
+}
+
+STRINGTABLE
+{
+ StringCourier,     "Courier New"
+ StringArial,       "Arial"
+ StringTimes,       "Times New Roman"
+ StringHelp,        "The help is not yet implemented"
+
+ FrameIdentity,     "Graphics Menu Example"
+}

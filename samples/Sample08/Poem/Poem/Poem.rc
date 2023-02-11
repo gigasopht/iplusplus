@@ -1,0 +1,14 @@
+// win+ -- poem.rc -- Strings & User-Defined Resources
+
+#include "poem.h"
+
+FrameIdentity ICON poem.ico
+
+PoemIdentity PoePoem poem.txt
+
+STRINGTABLE
+{
+ FrameIdentity,     """Annabel Lee"" by Edgar Allen Poe"
+ StringApplication, "Poem"
+ StringExit,        "Exit Now ?"
+}

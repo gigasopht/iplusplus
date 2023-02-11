@@ -1,0 +1,13 @@
+// win+ -- Resource2.rc -- Icon and Cursor Demonstration Program no. 2
+
+#include "Resource2.h"
+
+FrameIdentity ICON   "Resource2.ico"
+FrameIdentity CURSOR "Resource2.cur"
+
+BitmapLoad BITMAP "Resource2.bmp"
+
+STRINGTABLE
+{
+ FrameIdentity, "Icon and Cursor Demonstration"
+}

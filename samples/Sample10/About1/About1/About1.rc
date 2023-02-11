@@ -1,0 +1,31 @@
+// win+ -- About1.rc -- About Box Demonstration Program Number 1
+
+#include <windows.h>
+#include "About1.h"
+
+FrameIdentity ICON About1.ico
+
+FrameIdentity MENU
+{
+ POPUP "&Help"
+  {
+   MENUITEM "&About About1...", MenuItemAbout
+  }
+}
+
+About1 ICON About1.ico
+
+DialogIdentity DIALOG  20, 20, 160, 80
+STYLE WS_POPUP | WS_DLGFRAME
+{
+ CTEXT "About1" 200,   0, 12, 160,  8
+ ICON "About1"  201,   8,  8,   0,  0
+ CTEXT "About Box Demonstration Program"  202,   0, 36, 160,  8
+ CTEXT "i++ for Windows" 203,   0, 48, 160,  8
+ DEFPUSHBUTTON "OK"                     IDOK,  64, 60,  32, 14, WS_GROUP
+}
+
+STRINGTABLE
+{
+ FrameIdentity, "About Dialog Box"
+}

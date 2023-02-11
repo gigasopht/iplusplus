@@ -1,0 +1,53 @@
+// win+ -- MenuDemonstration.rc -- Menu Demonstration
+
+#include "MenuDemonstration.h"
+
+FrameIdentity MENU
+{
+ POPUP "&File"
+  {
+   MENUITEM "&New",                   MenuItemNew
+   MENUITEM "&Open...",               MenuItemOpen
+   MENUITEM "&Save",                  MenuItemSave
+   MENUITEM "Save &As...",            MenuItemSaveAs
+   MENUITEM SEPARATOR
+   MENUITEM "E&xit",                  MenuItemExit
+  }
+ POPUP "&Edit"
+  {
+   MENUITEM "&Undo",                  MenuItemUndo
+   MENUITEM SEPARATOR
+   MENUITEM "Cu&t",                   MenuItemCut
+   MENUITEM "&Copy",                  MenuItemCopy
+   MENUITEM "&Paste",                 MenuItemPaste
+   MENUITEM "De&lete",                MenuItemDelete
+  }
+ POPUP "&Background"
+  {
+   MENUITEM "&White",                 MenuItemWhite, CHECKED
+   MENUITEM "&Light Gray",            MenuItemLightGray
+   MENUITEM "&Gray",                  MenuItemGray
+   MENUITEM "&Dark Gray",             MenuItemDarkGray
+   MENUITEM "&Black",                 MenuItemBlack
+  }
+ POPUP "&Timer"
+  {
+   MENUITEM "&Start"                  MenuItemStart
+   MENUITEM "S&top"                   MenuItemStop,  GRAYED
+  }
+ POPUP "&Help"
+  {
+   MENUITEM "&Help...",                     MenuItemHelp
+   MENUITEM "&About Menu Demonstration...", MenuItemAbout
+  }
+}
+
+STRINGTABLE
+{
+ StringHelp,    "The help system is yet to be implemented."
+ StringAbout,   "This program demonstrates the use of menus."
+ StringExit,        "Exit?"
+ StringApplication, "Menu Demonstration"
+
+ FrameIdentity, "Menu Demonstration"
+}

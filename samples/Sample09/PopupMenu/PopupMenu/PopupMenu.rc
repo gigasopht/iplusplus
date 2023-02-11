@@ -1,0 +1,49 @@
+// win+ -- PopupMenu.rc -- Popup Menu Demonstration
+
+#include "PopupMenu.h"
+
+MenuIdentity MENU
+{
+ POPUP ""
+  {
+   POPUP "&File"
+    {
+     MENUITEM "&New",               MenuItemNew
+     MENUITEM "&Open...",           MenuItemOpen
+     MENUITEM "&Save",              MenuItemSave
+     MENUITEM "Save &As...",        MenuItemSaveAs
+     MENUITEM SEPARATOR
+     MENUITEM "E&xit",              MenuItemExit
+    }
+   POPUP "&Edit"
+    {
+     MENUITEM "&Undo",              MenuItemUndo
+     MENUITEM SEPARATOR
+     MENUITEM "Cu&t",               MenuItemCut
+     MENUITEM "&Copy",              MenuItemCopy
+     MENUITEM "&Paste",             MenuItemPaste
+     MENUITEM "De&lete",            MenuItemDelete
+    }
+   POPUP "&Background"
+    {
+     MENUITEM "&White",             MenuItemWhite, CHECKED
+     MENUITEM "&Light Gray",        MenuItemLightGray
+     MENUITEM "&Gray",              MenuItemGray
+     MENUITEM "&Dark Gray",         MenuItemDarkGray
+     MENUITEM "&Black",             MenuItemBlack
+     }
+   POPUP "&Help"
+    {
+     MENUITEM "&Help...",              MenuItemHelp
+     MENUITEM "&About Popup Menu...",  MenuItemAbout
+    }
+  }
+}
+
+STRINGTABLE
+{
+ StringHelp,    "The help system is yet to be implemented."
+ StringAbout,   "This program demonstrates the use of popup menus."
+
+ FrameIdentity, "Popup Menu Demonstration"
+}

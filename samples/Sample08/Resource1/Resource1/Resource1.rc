@@ -1,0 +1,11 @@
+// win+ -- Resource1.rc -- Icon and Cursor Demonstration Program no. 1
+
+#include "Resource1.h"
+
+FrameIdentity ICON    "Resource1.ico"
+FrameIdentity CURSOR  "Resource1.cur"
+
+STRINGTABLE
+{
+ FrameIdentity, "Icon and Cursor Demonstration"
+}

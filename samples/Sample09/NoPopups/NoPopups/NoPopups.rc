@@ -1,0 +1,36 @@
+// win+ -- NoPopups.rc -- Demonstrates A no-Popup Nested Menu Scheme
+
+#include "NoPopups.h"
+
+MenuMain MENU
+{
+ MENUITEM "MAIN:",         0,        INACTIVE
+ MENUITEM "&File...",      MenuFile
+ MENUITEM "&Edit...",      MenuEdit
+}
+
+MenuFile MENU
+{
+ MENUITEM "FILE:",         0,        INACTIVE
+ MENUITEM "&New",          MenuItemNew
+ MENUITEM "&Open...",      MenuItemOpen
+ MENUITEM "&Save",         MenuItemSave
+ MENUITEM "Save &As...",   MenuItemSaveAs
+ MENUITEM "(&Main)",       MenuMain
+}
+
+MenuEdit MENU
+{
+ MENUITEM "EDIT:",         0,        INACTIVE
+ MENUITEM "&Undo",         MenuItemUndo
+ MENUITEM "Cu&t",          MenuItemCut
+ MENUITEM "&Copy",         MenuItemCopy
+ MENUITEM "&Paste",        MenuItemPaste
+ MENUITEM "De&lete",       MenuItemDelete
+ MENUITEM "(&Main)",       MenuMain
+}
+
+STRINGTABLE
+{
+ FrameIdentity, "No-Popup Nested Menu Demonstration"
+}
