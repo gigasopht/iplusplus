@@ -1,7 +1,7 @@
 // Win+-- menuDemonstration.cpp -- menu demonstration
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 #include "MenuDemonstration.h"
 
@@ -13,7 +13,7 @@ int __stdcall WinMain(handle module_handle,
     int show_command)
 {
     handle window_handle = create_window(register_window_class(L"Demo",client,class_style::horizontal_redraw | class_style::vertical_redraw),
-        (const character*)standard::resource_string(FrameIdentity),
+        (const character*)resource_string(FrameIdentity),
         style::standard,
         use_default,
         use_default,
@@ -24,7 +24,7 @@ int __stdcall WinMain(handle module_handle,
 
     show_window(window_handle, show_command);
 
-    iplusplus::queue queue_message;
+    queue_message queue_message;
     while (get_message(&queue_message, 0, 0, 0))
     {
         translate_message(&queue_message);
@@ -129,8 +129,8 @@ result __stdcall client(handle window_handle,
         case MenuItemHelp:
         {
             message_box(window_handle,
-                (const character*)standard::resource_string(StringHelp),
-                (const character*)standard::resource_string(FrameIdentity),
+                (const character*)resource_string(StringHelp),
+                (const character*)resource_string(FrameIdentity),
                 message_box_style::icon_exclamation | message_box_style::ok);
         }
         break;
@@ -138,8 +138,8 @@ result __stdcall client(handle window_handle,
         case MenuItemAbout:
         {
             message_box(window_handle,
-                (const character*)standard::resource_string(StringAbout),
-                (const character*)standard::resource_string(FrameIdentity),
+                (const character*)resource_string(StringAbout),
+                (const character*)resource_string(FrameIdentity),
                 message_box_style::icon_information | message_box_style::ok);
         }
         break;
@@ -154,8 +154,8 @@ result __stdcall client(handle window_handle,
     case message::close:
     {
         if (message_box(window_handle,
-            (const character*)standard::resource_string(StringExit),
-            (const character*)standard::resource_string(StringApplication),
+            (const character*)resource_string(StringExit),
+            (const character*)resource_string(StringApplication),
             message_box_style::yes_no) == item_identity::yes)
             post_quit_message();
     }

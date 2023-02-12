@@ -27105,6 +27105,8 @@ namespace core
 
     export extern "C" int __stdcall print_string_w(const wchar_t*, const wchar_t*, ...);
 
+    export extern "C" int __stdcall print_string(const wchar_t*, const wchar_t*, ...);
+
     export extern "C" int __stdcall message_box_a(handle window,
         const char* text,
         const char* caption,

@@ -1,13 +1,13 @@
 // win+ - System Metrics - Data Table Containing Metric Names and Descriptions
 
-struct entry
+struct metric_entry
 {
  int index;
  const character* title;
  const character* description;
 };
 
-entry metrics[] =
+metric_entry metrics[] =
 {
  system_metric::screen_width,                        L"system_metric::screen_width",                     L"Screen width in pixels",
  system_metric::screen_height,                       L"system_metric::screen_height",                    L"Screen height in pixels",

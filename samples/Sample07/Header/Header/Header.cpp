@@ -2,7 +2,7 @@
 //                    -- Unlike the original sample that was written, this sample converts the file from single byte to double byte.
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 result __stdcall client(handle, unsigned, parameter, parameter);
 
@@ -33,7 +33,7 @@ int __stdcall WinMain(handle module_handle,
 
     show_window(window, show_command);
 
-    iplusplus::queue queue_message;
+    queue_message queue_message;
     while (get_message(&queue_message, 0, 0, 0))
     {
         translate_message(&queue_message);
@@ -80,7 +80,7 @@ result __stdcall client(handle window_handle,
 
         data->listbox_handle = create_window(L"listbox",
             (const character*)null,
-            style::child | style::visible | listbox_style::_standard,
+            style::child | style::visible | listbox_style::standard,
             text_metrics_get.average_character_width,
             text_metrics_get.height * 3,
             text_metrics_get.average_character_width * 13 + get_system_metrics(system_metric::vertical_scroll_width),

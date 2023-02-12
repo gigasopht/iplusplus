@@ -1,7 +1,7 @@
-// Win# -- Resource2.cpp -- Icon and Cursor Demonstration Program Number 2
+// Win+ -- Resource2.cpp -- Icon and Cursor Demonstration Program Number 2
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 #include "Resource2.h"
 
@@ -38,7 +38,7 @@ int __stdcall WinMain(handle module_handle,
 
     show_window(window, show_command);
 
-    iplusplus::queue queue_message;
+    queue_message queue_message;
     while (get_message(&queue_message, 0, 0, 0))
     {
         translate_message(&queue_message);

@@ -424,6 +424,7 @@ write_profile_section_w=KERNEL32.WriteProfileSectionW
 write_profile_string_w=KERNEL32.WriteProfileStringW
 print_string_w=USER32.wsprintfW
 print_string=USER32.wsprintfW
+
 add_form_a=WinSpool.AddFormA
 delete_form_a=WinSpool.DeleteFormA
 add_printer_a=WinSpool.AddPrinterA

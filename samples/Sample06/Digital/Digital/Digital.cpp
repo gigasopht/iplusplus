@@ -1,7 +1,7 @@
 // Win+-- Digital.cpp -- Digital Clock
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 result __stdcall client(handle, unsigned, parameter, parameter);
 
@@ -32,7 +32,7 @@ int __stdcall WinMain(handle module_handle,
 
     show_window(window, show_command);
 
-    queue queue_message;
+    queue_message queue_message;
     while (get_message(&queue_message, 0, 0, 0))
     {
         translate_message(&queue_message);

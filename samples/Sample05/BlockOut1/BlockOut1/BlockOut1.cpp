@@ -1,7 +1,7 @@
 // Win+ -- BlockOut1.cpp -- Mouse Button Demonstration Program - No Capture
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 result __stdcall client(handle, unsigned, parameter, parameter);
 void draw_box_outline(handle, ipoint, ipoint);
@@ -29,7 +29,7 @@ int __stdcall WinMain(handle module_handle,
 
     show_window(window, show_command);
 
-    iplusplus::queue queue_message;
+    queue_message queue_message;
     while (get_message(&queue_message, 0, 0, 0))
     {
         translate_message(&queue_message);

@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalModuleDependencies>\iplusplus\iplusplus\iplusplus\x64\release\Iplusplus.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\core.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\windows.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\database.ixx.ifc;</AdditionalModuleDependencies>
+      <AdditionalModuleDependencies>\iplusplus\iplusplus\x64\release\iplusplus.ixx.ifc</AdditionalModuleDependencies>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <EnableModules>true</EnableModules>
     </ClCompile>
@@ -123,7 +123,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalModuleDependencies>\iplusplus\iplusplus\iplusplus\x64\release\Iplusplus.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\core.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\windows.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\database.ixx.ifc;</AdditionalModuleDependencies>
+      <AdditionalModuleDependencies>\iplusplus\iplusplus\x64\release\iplusplus.ixx.ifc</AdditionalModuleDependencies>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <EnableModules>true</EnableModules>
     </ClCompile>

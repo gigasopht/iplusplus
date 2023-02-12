@@ -1,7 +1,7 @@
 // Win+ -- KeyLook.cpp -- Displays Keyboard and character Messages
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 result __stdcall client(handle, unsigned, parameter, parameter);
 
@@ -28,7 +28,7 @@ int __stdcall WinMain(handle module_handle,
 
     show_window(window, show_command);
 
-    iplusplus::queue queue_message;
+    queue_message queue_message;
     while (get_message(&queue_message, 0, 0, 0))
     {
         translate_message(&queue_message);
@@ -45,8 +45,8 @@ struct window_data
     int width_of_character,
         height_of_character;
 
-    standard::string top;
-    standard::string underline;
+    string top;
+    string underline;
 
     window_data()
         : top(L"Message                  Key Char Repeat Scan Ext ALT Prev Tran"),
@@ -217,7 +217,7 @@ void show_key(handle window_handle,
         data->width_of_character,
         data->rectangle_of_client[1](1) - data->height_of_character,
         buffer,
-        print_string(buffer,
+        print_string_w(buffer,
             format_array[type],
             message,
             parameter1,

@@ -4,7 +4,7 @@ import std.core;
 using namespace std;
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 result __stdcall client(handle, unsigned, parameter, parameter);
 
@@ -35,7 +35,7 @@ int __stdcall WinMain(handle module_handle,
 
     show_window(window, show_command);
 
-    iplusplus::queue queue_message;
+    queue_message queue_message;
     for (;;)
     {
         if (peek_message(&queue_message, (handle)null, 0, 0, peek::remove))

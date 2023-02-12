@@ -1,7 +1,7 @@
 // Win# -- Colors.cpp -- Modeless Dialog Box
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 #include "Colors.h"
 
@@ -47,7 +47,7 @@ int __stdcall WinMain(handle module_handle,
         window_handle,
         color_procedure);
 
-    queue queue_message;
+    queue_message queue_message;
     while (get_message(&queue_message))
     {
         if (!is_dialog_message(dialog_handle, &queue_message))

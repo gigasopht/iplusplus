@@ -1,7 +1,7 @@
 // win+ -- WhatSize.cpp -- What Size is the Window?
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 result __stdcall client(handle, unsigned, parameter, parameter);
 void show_size(handle, handle, int, int, int, const character*);
@@ -29,7 +29,7 @@ int __stdcall WinMain(handle module_handle,
 
     show_window(window, show_command);
 
-    iplusplus::queue queue_message;
+    queue_message queue_message;
     while (get_message(&queue_message, 0, 0, 0))
     {
         translate_message(&queue_message);
@@ -41,8 +41,8 @@ int __stdcall WinMain(handle module_handle,
 
 struct window_data
 {
-    standard::string heading;
-    standard::string underline;
+    string heading;
+    string underline;
 
     int width_of_character,
         height_of_character;
@@ -147,7 +147,7 @@ void show_size(handle window_handle,
         x_text,
         y_text,
         buffer,
-        print_string(buffer, L"%-20s %8d %10d",
+        print_string_w(buffer, L"%-20s %8d %10d",
             map_mode_string,
             client[1](0),
             client[1](1)));

@@ -1,13 +1,13 @@
-// win# -- device capabilities display program
+// win+ -- device capabilities display program
 
-struct entry
+struct capability_entry
 {
 	int index;
 	wchar_t* label;
 	wchar_t* description;
 };
 
-entry capabilities[] =
+capability_entry capabilities[] =
 {
   capability::horizontal_size,       (wchar_t*)L"capability::horizontal_size",        (wchar_t*)L"Width in millimeters:",
   capability::vertical_size,         (wchar_t*)L"capability::vertical_size",          (wchar_t*)L"Height in millimeters:",

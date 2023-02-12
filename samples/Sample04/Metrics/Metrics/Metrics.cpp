@@ -1,7 +1,7 @@
 // Win+ -- Metrics.cpp - System Metrics Display
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 #include "Metrics.hpp"
 
@@ -32,7 +32,7 @@ int __stdcall WinMain(handle module_handle,
 
     show_window(window, show_command);
 
-    iplusplus::queue queue_message;
+    queue_message queue_message;
     while (get_message(&queue_message, 0, 0, 0))
     {
         translate_message(&queue_message);
@@ -246,7 +246,7 @@ result __stdcall client(handle window_handle,
                 x + column1 * data->width_of_capitals + column2 * data->width_of_character,
                 y,
                 (const character*)buffer,
-                print_string((const character*)buffer, L"%5d",
+                print_string_w((const character*)buffer, L"%5d",
                     get_system_metrics(metrics[i].index)));
 
             set_text_alignment(device_context, text_alignment_flag::left | text_alignment_flag::top);

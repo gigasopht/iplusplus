@@ -107,7 +107,7 @@
       <DisableSpecificWarnings>4251;4275;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <EnableModules>true</EnableModules>
-      <AdditionalModuleDependencies>\iplusplus\iplusplus\iplusplus\x64\release\Iplusplus.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\core.ixx.ifc;d:\iplusplus\iplusplus\iplusplus\x64\release\windows.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\database.ixx.ifc;</AdditionalModuleDependencies>
+      <AdditionalModuleDependencies>\iplusplus\iplusplus\x64\release\iplusplus.ixx.ifc</AdditionalModuleDependencies>
     </ClCompile>
     <Link>
       <AdditionalDependencies>iplusplus.lib;layer.lib</AdditionalDependencies>
@@ -135,7 +135,7 @@
       <DisableSpecificWarnings>4251;4275;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <EnableModules>true</EnableModules>
-      <AdditionalModuleDependencies>\iplusplus\iplusplus\iplusplus\x64\release\Iplusplus.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\core.ixx.ifc;d:\iplusplus\iplusplus\iplusplus\x64\release\windows.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\database.ixx.ifc;</AdditionalModuleDependencies>
+      <AdditionalModuleDependencies>\iplusplus\iplusplus\x64\release\iplusplus.ixx.ifc</AdditionalModuleDependencies>
     </ClCompile>
     <Link>
       <AdditionalDependencies>iplusplus.lib;layer.lib</AdditionalDependencies>

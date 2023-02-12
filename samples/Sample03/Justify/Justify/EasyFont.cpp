@@ -4,7 +4,7 @@ import std.core;
 using namespace std;
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 #include "EasyFont.hpp"
 

@@ -1,7 +1,7 @@
 // Win+ -- SystemMenu.cpp -- Changing the System Menu
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 struct system_item
 {

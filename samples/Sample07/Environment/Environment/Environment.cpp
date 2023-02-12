@@ -1,7 +1,7 @@
 // Win# -- Environment.cpp -- Environment List Box
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 character* lstrchr(const character* string,
     character find)
@@ -35,7 +35,7 @@ int __stdcall WinMain(handle module_handle,
 
     show_window(window, show_command);
 
-    iplusplus::queue queue_message;
+    queue_message queue_message;
     while (get_message(&queue_message, 0, 0, 0))
     {
         translate_message(&queue_message);
@@ -73,9 +73,9 @@ result __stdcall client(handle window_handle,
 
         release_device_context(window_handle, device_context);
 
-        data->listbox = create_window("listbox",
-            "",
-            style::child | style::visible | listbox_style::_standard,
+        data->listbox = create_window(L"listbox",
+            L"",
+            style::child | style::visible | listbox_style::standard,
             use_default,
             use_default,
             use_default,
@@ -106,7 +106,7 @@ result __stdcall client(handle window_handle,
             text_metrics_get.average_character_width * maximum_environment,
             text_metrics_get.height);
 
-        character* environment_save = get_environment_strings<character>();
+        character* environment_save = get_environment_strings();
         character* environment = environment_save;
         while (*environment)
         {

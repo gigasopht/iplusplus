@@ -1,7 +1,7 @@
 // Win+ -- Hex.cpp -- Hexadecimal Calculator - Strictly Ascii
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 import std.core;
 using namespace std;
@@ -56,7 +56,7 @@ int __stdcall WinMain(handle module_handle,
 
     show_window(dialog_handle, show_command);
 
-    iplusplus::queue queue_message;
+    queue_message queue_message;
     while (get_message(&queue_message))
     {
         translate_message(&queue_message);
@@ -70,7 +70,7 @@ void show_number(handle window_handle,
     unsigned number)
 {
     character number_string[30];
-    standard::integer_to_ascii(number, number_string, 16);
+    integer_to_ascii(number, number_string, 16);
     set_child_text(window_handle,
         virtual_key::escape,
         number_string);

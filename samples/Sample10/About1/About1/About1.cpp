@@ -1,7 +1,7 @@
-// Win # -- About1.cpp -- About Box Demonstration Program Number 1
+// Win+ -- About1.cpp -- About Box Demonstration Program Number 1
 
 import iplusplus;
-using namespace iplusplus;
+using namespace core;
 
 #include "About1.h"
 
@@ -36,7 +36,7 @@ int __stdcall WinMain(handle module_handle,
 
     //handle window = create_window(atom_name, aszFrame);
 
-    standard::resource_string rs(FrameIdentity);
+    resource_string rs(FrameIdentity);
 
     handle window_handle = create_window(atom_name,
         (const character*)rs,
@@ -50,7 +50,7 @@ int __stdcall WinMain(handle module_handle,
 
     show_window(window_handle, show_command);
 
-    iplusplus::queue queue_message;
+    queue_message queue_message;
     while (get_message(&queue_message, 0, 0, 0))
     {
         translate_message(&queue_message);
