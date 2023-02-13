@@ -4705,9 +4705,9 @@ namespace core
         std::ostream& operator<<(std::ostream& s, const linked_list<t, compare>& o)
     {
         s << string(L"{");
-        typename::linked_list<t, compare>::iterator e = o.end();
-        typename::linked_list<t, compare>::iterator l = e; l--;
-        for (typename::linked_list<t, compare>::iterator i = o.begin(); i != e; ++i)
+        linked_list_iterator<t> e = o.end();
+        linked_list_iterator<t> l = e; l--;
+        for (linked_list_iterator<t> i = o.begin(); i != e; ++i)
         {
             s << *i; if (i != l) s << string(L",");
         }
@@ -5451,10 +5451,10 @@ namespace core
     export template<class t, class less = core::less<t>>
         inline bool operator==(const set<t, less>& a, const set<t, less>& b)
     {
-        typename::set<t, less>::iterator first1 = a.begin();
-        typename::set<t, less>::iterator last1 = a.end();
-        typename::set<t, less>::iterator first2 = b.begin();
-        typename::set<t, less>::iterator last2 = b.end();
+        set_iterator<t> first1 = a.begin();
+        set_iterator<t> last1 = a.end();
+        set_iterator<t> first2 = b.begin();
+        set_iterator<t> last2 = b.end();
 
         bool equals = true;
 
@@ -5492,10 +5492,10 @@ namespace core
     export template<class t, class less = core::less<t>>
         int compare_sets(const set<t, less>& a, const set<t, less>& b)
     {
-        typename::set<t, less>::iterator first1 = a.begin();
-        typename::set<t, less>::iterator last1 = a.end();
-        typename::set<t, less>::iterator first2 = b.begin();
-        typename::set<t, less>::iterator last2 = b.end();
+        set_iterator<t> first1 = a.begin();
+        set_iterator<t> last1 = a.end();
+        set_iterator<t> first2 = b.begin();
+        set_iterator<t> last2 = b.end();
 
         while (first1 != last1 && first2 != last2)
         {
@@ -5527,8 +5527,8 @@ namespace core
         oarchive& operator<<(oarchive& s, const set<t, less>& o)
     {
         s << o.length();
-        typename::set<t, less>::iterator e = o.end();
-        for (typename::set<t, less>::iterator i = o.begin(); i != e; ++i)
+        set_iterator<t> e = o.end();
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
         {
             s << *i;
         }
@@ -5553,9 +5553,9 @@ namespace core
         std::ostream& operator<<(std::ostream& s, const set<t, less>& o)
     {
         s << string(L"{");
-        typename::set<t, less>::iterator e = o.end();
-        typename::set<t, less>::iterator l = e - 1;
-        for (typename::set<t, less>::iterator i = o.begin(); i != e; ++i)
+        set_iterator<t> e = o.end();
+        set_iterator<t> l = e - 1;
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
         {
             s << *i; if (i != l) s << string(L",");
         }
@@ -5567,9 +5567,9 @@ namespace core
         std::wostream& operator<<(std::wostream& s, const set<t, less>& o)
     {
         s << string(L"{");
-        typename::set<t, less>::iterator e = o.end();
-        typename::set<t, less>::iterator l = e - 1;
-        for (typename::set<t, less>::iterator i = o.begin(); i != e; ++i)
+        set_iterator<t> e = o.end();
+        set_iterator<t> l = e - 1;
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
         {
             s << *i; if (i != l) s << string(L",");
         }
@@ -5985,10 +5985,10 @@ namespace core
     export template<class t, class less = core::less<t>>
         inline bool operator==(const multiset<t, less>& a, const multiset<t, less>& b)
     {
-        typename::set<t, less>::iterator first1 = a.begin();
-        typename::set<t, less>::iterator last1 = a.end();
-        typename::set<t, less>::iterator first2 = b.begin();
-        typename::set<t, less>::iterator last2 = b.end();
+        set_iterator<t> first1 = a.begin();
+        set_iterator<t> last1 = a.end();
+        set_iterator<t> first2 = b.begin();
+        set_iterator<t> last2 = b.end();
 
         bool equals = true;
 
@@ -6027,10 +6027,10 @@ namespace core
     export template<class t, class less = core::less<t>>
         int compare_multisets(const multiset<t, less>& a, const multiset<t, less>& b)
     {
-        typename::set<t, less>::iterator first1 = a.begin();
-        typename::set<t, less>::iterator last1 = a.end();
-        typename::set<t, less>::iterator first2 = b.begin();
-        typename::set<t, less>::iterator last2 = b.end();
+        set_iterator<t> first1 = a.begin();
+        set_iterator<t> last1 = a.end();
+        set_iterator<t> first2 = b.begin();
+        set_iterator<t> last2 = b.end();
 
         while (first1 != last1 && first2 != last2)
         {
@@ -6056,9 +6056,9 @@ namespace core
         std::ostream& operator<<(std::ostream& s, const multiset<t, less>& o)
     {
         s << string(L"{");
-        typename::set<t, less>::iterator e = o.end();
-        typename::set<t, less>::iterator l = e - 1;
-        for (typename::set<t, less>::iterator i = o.begin(); i != e; ++i)
+        set_iterator<t> e = o.end();
+        set_iterator<t> l = e - 1;
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
         {
             s << *i; if (i != l) s << string(L",");
         }
@@ -6070,9 +6070,9 @@ namespace core
         std::wostream& operator<<(std::wostream& s, const multiset<t, less>& o)
     {
         s << string(L"{");
-        typename::set<t, less>::iterator e = o.end();
-        typename::set<t, less>::iterator l = e - 1;
-        for (typename::set<t, less>::iterator i = o.begin(); i != e; ++i)
+        set_iterator<t> e = o.end();
+        set_iterator<t> l = e - 1;
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
         {
             s << *i; if (i != l) s << string(L",");
         }
@@ -6084,9 +6084,9 @@ namespace core
         oarchive& operator<<(oarchive& s, const multiset<t, less>& o)
     {
         s << o.length();
-        typename::set<t, less>::iterator e = o.end();
-        typename::set<t, less>::iterator l = e - 1;
-        for (typename::set<t, less>::iterator i = o.begin(); i != e; ++i)
+        set_iterator<t> e = o.end();
+        set_iterator<t> l = e - 1;
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
         {
             s << *i;
         }
@@ -6161,8 +6161,8 @@ namespace core
         inline oarchive& operator<<(oarchive& s, const map<k, t>& o)
     {
         s << o.length();
-        typename::set<key_value<k, t>>::iterator e = o.end();
-        for (typename::set<key_value<k, t>>::iterator i = o.begin(); i != e; ++i)
+        set_iterator<key_value<k,t>> e = o.end();
+        for (set_iterator<key_value<k,t>> i = o.begin(); i != e; ++i)
         {
             s << *i;
         }
@@ -6187,9 +6187,9 @@ namespace core
         inline std::ostream& operator<<(std::ostream& s, const map<k, t>& o)
     {
         s << "{";
-        typename::set<key_value<k, t>>::iterator e = o.end();
-        typename::set<key_value<k, t>>::iterator l = e - 1;
-        for (typename::set<key_value<k, t>>::iterator i = o.begin(); i != e; ++i)
+        set_iterator<key_value<k,t>> e = o.end();
+        set_iterator<key_value<k,t>> l = e - 1;
+        for (set_iterator<key_value<k,t>> i = o.begin(); i != e; ++i)
         {
             s << "(" << (*i).key << "," << (*i).value << ")"; if (i != l) s << ",";
         }
@@ -6201,9 +6201,9 @@ namespace core
         inline std::wostream& operator<<(std::wostream& s, const map<k, t>& o)
     {
         s << "{";
-        typename::set<key_value<k, t>>::iterator e = o.end();
-        typename::set<key_value<k, t>>::iterator l = e - 1;
-        for (typename::set<key_value<k, t>>::iterator i = o.begin(); i != e; ++i)
+        set_iterator<key_value<k,t>> e = o.end();
+        set_iterator<key_value<k,t>> l = e - 1;
+        for (set_iterator<key_value<k,t>> i = o.begin(); i != e; ++i)
         {
             s << "(" << (*i).key << "," << (*i).value << ")"; if (i != l) s << ",";
         }
@@ -6242,8 +6242,8 @@ namespace core
         inline oarchive& operator<<(oarchive& s, const multimap<k, t>& o)
     {
         s << o.length();
-        typename::set<key_value<k, t>>::iterator e = o.end();
-        for (typename::set<key_value<k, t>>::iterator i = o.begin(); i != e; ++i)
+        set_iterator<key_value<k,t>> e = o.end();
+        for (set_iterator<key_value<k,t>> i = o.begin(); i != e; ++i)
         {
             s << *i;
         }
@@ -6268,9 +6268,9 @@ namespace core
         inline std::ostream& operator<<(std::ostream& s, const multimap<k, t>& o)
     {
         s << "{";
-        typename::set<key_value<k, t>>::iterator e = o.end();
-        typename::set<key_value<k, t>>::iterator l = e - 1;
-        for (typename::set<key_value<k, t>>::iterator i = o.begin(); i != e; ++i)
+        set_iterator<key_value<k,t>> e = o.end();
+        set_iterator<key_value<k,t>> l = e - 1;
+        for (set_iterator<key_value<k,t>> i = o.begin(); i != e; ++i)
         {
             s << "(" << (*i).key << "," << (*i).value << ")"; if (i != l) s << ",";
         }
@@ -6282,9 +6282,9 @@ namespace core
         inline std::wostream& operator<<(std::wostream& s, const multimap<k, t>& o)
     {
         s << "{";
-        typename::set<key_value<k, t>>::iterator e = o.end();
-        typename::set<key_value<k, t>>::iterator l = e - 1;
-        for (typename::set<key_value<k, t>>::iterator i = o.begin(); i != e; ++i)
+        set_iterator<key_value<k,t>> e = o.end();
+        set_iterator<key_value<k,t>> l = e - 1;
+        for (set_iterator<key_value<k,t>> i = o.begin(); i != e; ++i)
         {
             s << "(" << (*i).key << "," << (*i).value << ")"; if (i != l) s << ",";
         }
@@ -7005,9 +7005,9 @@ namespace core
         inline std::ostream& operator<<(std::ostream& s, const array<t>& o)
     {
         s << string(L"{");
-        typename::array<t>::iterator e = o.end();
-        typename::array<t>::iterator l = e - 1;
-        for (typename::array<t>::iterator i = o.begin(); i != e; ++i)
+        array_iterator<t> e = o.end();
+        array_iterator<t> l = e - 1;
+        for (array_iterator<t> i = o.begin(); i != e; ++i)
         {
             s << *i; if (i != l) s << string(L",");
         }
@@ -7019,9 +7019,9 @@ namespace core
         inline std::wostream& operator<<(std::wostream& s, const array<t>& o)
     {
         s << string(L"{");
-        typename::array<t>::iterator e = o.end();
-        typename::array<t>::iterator l = e - 1;
-        for (typename::array<t>::iterator i = o.begin(); i != e; ++i)
+        array_iterator<t> e = o.end();
+        array_iterator<t> l = e - 1;
+        for (array_iterator<t> i = o.begin(); i != e; ++i)
         {
             s << *i; if (i != l) s << string(L",");
         }
@@ -7033,8 +7033,8 @@ namespace core
         oarchive& operator<<(oarchive& s, const array<t>& o)
     {
         s << o.length();
-        typename::array<t>::iterator e = o.end();
-        for (typename::array<t>::iterator i = o.begin(); i != e; ++i)
+        array_iterator<t> e = o.end();
+        for (array_iterator<t> i = o.begin(); i != e; ++i)
         {
             s << *i;
         }
@@ -7214,8 +7214,8 @@ namespace core
         oarchive& operator<<(oarchive& s, const tree<k, t, compare, less>& o)
     {
         s << o.length();
-        typename::set<t, less>::iterator e = o.end();
-        for (typename::set<t, less>::iterator i = o.begin(); i != e; ++i)
+        set_iterator<t> e = o.end();
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
         {
             s << *i;
         }
@@ -7906,9 +7906,9 @@ namespace core
         std::ostream& operator<<(std::ostream& s, const list <t, compare>& o)
     {
         s << string(L"{");
-        typename::list<t, compare>::iterator e = o.end();
-        typename::list<t, compare>::iterator l = o.last();
-        for (typename::list<t, compare>::iterator i = o.begin(); i != e; ++i)
+        list_iterator<t> e = o.end();
+        list_iterator<t> l = o.last();
+        for (list_iterator<t> i = o.begin(); i != e; ++i)
         {
             s << *i; if (i != l) s << string(L",");
         }
@@ -8116,9 +8116,9 @@ namespace core
         s << string(L"{");
         if (o.length() != 0)
         {
-            typename::stack<t>::iterator e = o.end();
-            typename::stack<t>::iterator l = o.last();
-            for (typename::stack<t>::iterator i = o.begin(); i != e; ++i)
+            stack_iterator<t> e = o.end();
+            stack_iterator<t> l = o.last();
+            for (stack_iterator<t> i = o.begin(); i != e; ++i)
             {
                 s << *i; if (i != l) s << string(L",");
             }
@@ -8377,9 +8377,9 @@ namespace core
         std::ostream& operator<<(std::ostream& s, const queue<t>& o)
     {
         s << string(L"{");
-        typename::queue<t>::iterator e = o.end();
-        typename::queue<t>::iterator l = e; l--;
-        for (typename::queue<t>::iterator i = o.begin(); i != e; ++i)
+        queue_iterator<t> e = o.end();
+        queue_iterator<t> l = e; l--;
+        for (queue_iterator<t> i = o.begin(); i != e; ++i)
         {
             s << *i; if (i != l) s << string(L",");
         }
