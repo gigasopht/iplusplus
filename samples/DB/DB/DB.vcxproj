@@ -105,7 +105,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalModuleDependencies>\iplusplus\iplusplus\iplusplus\x64\release\Iplusplus.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\core.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\windows.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\database.ixx.ifc;;\iplusplus\iplusplus\iplusplus\x64\release\serialization.ixx.ifc;</AdditionalModuleDependencies>
+      <AdditionalModuleDependencies>\iplusplus\iplusplus\x64\release\Iplusplus.ixx.ifc;</AdditionalModuleDependencies>
       <EnableModules>true</EnableModules>
     </ClCompile>
     <Link>
@@ -125,7 +125,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalModuleDependencies>\iplusplus\iplusplus\iplusplus\x64\release\Iplusplus.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\core.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\windows.ixx.ifc;\iplusplus\iplusplus\iplusplus\x64\release\database.ixx.ifc;;\iplusplus\iplusplus\iplusplus\x64\release\serialization.ixx.ifc;</AdditionalModuleDependencies>
+      <AdditionalModuleDependencies>\iplusplus\iplusplus\x64\release\Iplusplus.ixx.ifc;</AdditionalModuleDependencies>
       <EnableModules>true</EnableModules>
     </ClCompile>
     <Link>

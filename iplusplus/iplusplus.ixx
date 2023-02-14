@@ -5992,7 +5992,6 @@ namespace core
 
         bool equals = true;
 
-
         while (first1 != last1 && first2 != last2)
         {
             bool _less = less()(*first1, *first2);
@@ -6126,7 +6125,6 @@ namespace core
             set_iterator < key_value<k, t>> i = find(key_value<k, t>(key));
             return (*i).value;
         }
-
         struct reference
         {
             map* m;
