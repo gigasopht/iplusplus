@@ -138,10 +138,10 @@ namespace core
         ~wait() { s.release(); }
     };
 
-    static unsigned boundaries[] = { 0,8,16,24,32,40,56,88,120,160,184,216,256,304,352,400,472,600,728,984,1496,2008,2520,3032,3544,4056,4568,5080,5592,6104,6616,7128,7640,8152 };
+    static unsigned boundaries[] = { 0,8,16,24,32,40,56,88,120,160,184,216,256,304,352,400,472,600,728,984,1496,2008,2520,3032,3544 };
 
     enum { number_of_pools = sizeof(boundaries) / sizeof(unsigned), leading = 16 };
-    enum { block_size = 65536 };
+    enum { block_size = 4096 };
 
     inline unsigned long long quantum_from_size(unsigned long long size)
     {
