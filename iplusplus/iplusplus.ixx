@@ -2279,7 +2279,7 @@ namespace core
     }
 
     export template <class character>
-         inline long long str_length(const character* string)
+        inline long long str_length(const character* string)
     {
         long long l = 0;
         while (*string)
@@ -3411,7 +3411,7 @@ namespace core
 
         list_iterator operator++(int)
         {
-            list_iterator<t> save = *this; ++* this;return save;
+            list_iterator<t> save = *this; ++* this; return save;
         }
 
         list_iterator& operator+=(unsigned long long increment)
@@ -3587,7 +3587,7 @@ namespace core
 
         linked_list_iterator operator++(int)
         {
-            linked_list_iterator save = *this; ++* this;return save;
+            linked_list_iterator save = *this; ++* this; return save;
         }
 
         linked_list_iterator& operator+=(unsigned long long increment)
@@ -3609,7 +3609,7 @@ namespace core
 
         linked_list_iterator operator--(int)
         {
-            linked_list_iterator save = *this; --* this;return save;
+            linked_list_iterator save = *this; --* this; return save;
         }
 
         linked_list_iterator& operator-=(unsigned long long decrement)
@@ -4769,7 +4769,7 @@ namespace core
 
         set_iterator operator++(int)
         {
-            set_iterator save = *this; ++* this;return save;
+            set_iterator save = *this; ++* this; return save;
         }
 
         set_iterator& operator+=(long long increment)
@@ -4791,7 +4791,7 @@ namespace core
 
         set_iterator operator--(int)
         {
-            set_iterator save = *this; --* this;return save;
+            set_iterator save = *this; --* this; return save;
         }
 
         set_iterator& operator-=(long long decrement)
@@ -6159,8 +6159,8 @@ namespace core
         inline oarchive& operator<<(oarchive& s, const map<k, t>& o)
     {
         s << o.length();
-        set_iterator<key_value<k,t>> e = o.end();
-        for (set_iterator<key_value<k,t>> i = o.begin(); i != e; ++i)
+        set_iterator<key_value<k, t>> e = o.end();
+        for (set_iterator<key_value<k, t>> i = o.begin(); i != e; ++i)
         {
             s << *i;
         }
@@ -6185,9 +6185,9 @@ namespace core
         inline std::ostream& operator<<(std::ostream& s, const map<k, t>& o)
     {
         s << "{";
-        set_iterator<key_value<k,t>> e = o.end();
-        set_iterator<key_value<k,t>> l = e - 1;
-        for (set_iterator<key_value<k,t>> i = o.begin(); i != e; ++i)
+        set_iterator<key_value<k, t>> e = o.end();
+        set_iterator<key_value<k, t>> l = e - 1;
+        for (set_iterator<key_value<k, t>> i = o.begin(); i != e; ++i)
         {
             s << "(" << (*i).key << "," << (*i).value << ")"; if (i != l) s << ",";
         }
@@ -6199,9 +6199,9 @@ namespace core
         inline std::wostream& operator<<(std::wostream& s, const map<k, t>& o)
     {
         s << "{";
-        set_iterator<key_value<k,t>> e = o.end();
-        set_iterator<key_value<k,t>> l = e - 1;
-        for (set_iterator<key_value<k,t>> i = o.begin(); i != e; ++i)
+        set_iterator<key_value<k, t>> e = o.end();
+        set_iterator<key_value<k, t>> l = e - 1;
+        for (set_iterator<key_value<k, t>> i = o.begin(); i != e; ++i)
         {
             s << "(" << (*i).key << "," << (*i).value << ")"; if (i != l) s << ",";
         }
@@ -6240,8 +6240,8 @@ namespace core
         inline oarchive& operator<<(oarchive& s, const multimap<k, t>& o)
     {
         s << o.length();
-        set_iterator<key_value<k,t>> e = o.end();
-        for (set_iterator<key_value<k,t>> i = o.begin(); i != e; ++i)
+        set_iterator<key_value<k, t>> e = o.end();
+        for (set_iterator<key_value<k, t>> i = o.begin(); i != e; ++i)
         {
             s << *i;
         }
@@ -6266,9 +6266,9 @@ namespace core
         inline std::ostream& operator<<(std::ostream& s, const multimap<k, t>& o)
     {
         s << "{";
-        set_iterator<key_value<k,t>> e = o.end();
-        set_iterator<key_value<k,t>> l = e - 1;
-        for (set_iterator<key_value<k,t>> i = o.begin(); i != e; ++i)
+        set_iterator<key_value<k, t>> e = o.end();
+        set_iterator<key_value<k, t>> l = e - 1;
+        for (set_iterator<key_value<k, t>> i = o.begin(); i != e; ++i)
         {
             s << "(" << (*i).key << "," << (*i).value << ")"; if (i != l) s << ",";
         }
@@ -6280,9 +6280,9 @@ namespace core
         inline std::wostream& operator<<(std::wostream& s, const multimap<k, t>& o)
     {
         s << "{";
-        set_iterator<key_value<k,t>> e = o.end();
-        set_iterator<key_value<k,t>> l = e - 1;
-        for (set_iterator<key_value<k,t>> i = o.begin(); i != e; ++i)
+        set_iterator<key_value<k, t>> e = o.end();
+        set_iterator<key_value<k, t>> l = e - 1;
+        for (set_iterator<key_value<k, t>> i = o.begin(); i != e; ++i)
         {
             s << "(" << (*i).key << "," << (*i).value << ")"; if (i != l) s << ",";
         }
@@ -6349,7 +6349,7 @@ namespace core
 
         dictionary_iterator<k, t> operator++(int)
         {
-            dictionary_iterator<k, t> save = *this; ++* this;return save;
+            dictionary_iterator<k, t> save = *this; ++* this; return save;
         }
 
         dictionary_iterator<k, t>& operator+=(long long increment)
@@ -6371,7 +6371,7 @@ namespace core
 
         dictionary_iterator<k, t> operator--(int)
         {
-            dictionary_iterator<k, t> save = *this; --* this;return save;
+            dictionary_iterator<k, t> save = *this; --* this; return save;
         }
 
         dictionary_iterator<k, t>& operator-=(long long decrement)
@@ -6403,7 +6403,7 @@ namespace core
     };
 
     export template <class k, class t, class less = core::less<k>>
-        struct dictionary : semaphore
+        struct dictionary
     {
         node header;
 
@@ -6418,20 +6418,16 @@ namespace core
 
         dictionary(const dictionary& copy)
         {
-            wait w(copy);
             for (key_value<k, t> kv : copy) (*this)[kv.key] = kv.value;
         }
 
         ~dictionary()
         {
-            wait w(*this);
             destroy((dictionary_node<k, t>*)header.parent);
         }
 
         dictionary& operator=(const dictionary& copy)
         {
-            wait wA(*this);
-            wait wB(copy);
             erase();
             for (key_value<k, t> kv : copy) (*this)[kv.key] = kv.value;
             return *this;
@@ -6443,7 +6439,7 @@ namespace core
             return *this;
         }
 
-        long long length() const { wait w(*this); return count(header.parent); }
+        long long length() const { return count(header.parent); }
 
         iterator begin() const { return header.left; }
 
@@ -6452,8 +6448,6 @@ namespace core
         iterator insert(const k& key,
             const t& data)
         {
-            wait w(*this);
-
             node* root_node = header.parent;
 
             if (root_node == 0)
@@ -6509,8 +6503,6 @@ namespace core
 
         void erase(const k& key)
         {
-            wait w(*this);
-
             node* root_node = header.parent;
 
             for (; ; )
@@ -6598,8 +6590,6 @@ namespace core
 
         iterator find(const k& key) const
         {
-            wait w(*this);
-
             if (!header.parent)
                 throw entry_not_found_exception();
             else
@@ -6623,7 +6613,6 @@ namespace core
 
         bool contains(const k& key)
         {
-            wait w(*this);
             try
             {
                 iterator i = find(key);
@@ -6634,7 +6623,6 @@ namespace core
 
         void erase()
         {
-            wait w(*this);
             destroy((dictionary_node<k, t>*)header.parent);
             header.left = &header;
             header.right = &header;
@@ -6643,8 +6631,6 @@ namespace core
 
         iterator after(const k& key) const
         {
-            wait w(*this);
-
             const node* y = &header;
             const node* x = header.parent;
 
@@ -6661,8 +6647,6 @@ namespace core
 
         iterator after_equals(const k& key) const
         {
-            wait w(*this);
-
             const node* y = &header;
             const node* x = header.parent;
 
@@ -6687,8 +6671,6 @@ namespace core
 
         iterator before(const k& key) const
         {
-            wait w(*this);
-
             const node* y = &header;
             const node* x = header.parent;
 
@@ -6707,8 +6689,6 @@ namespace core
 
         iterator before_equals(const k& key) const
         {
-            wait w(*this);
-
             const node* y = &header;
             const node* x = header.parent;
 
@@ -6731,9 +6711,9 @@ namespace core
             return (node*)y;
         }
 
-        iterator last() const { wait w(*this); return header.right; }
+        iterator last() const { return header.right; }
 
-        long long depth() const { wait w(*this); return depth(header.parent); }
+        long long depth() const { return depth(header.parent); }
 
         node* get_first()
         {
@@ -6862,7 +6842,7 @@ namespace core
 
         array_iterator operator++(int)
         {
-            array_iterator save = *this; i++;return save;
+            array_iterator save = *this; i++; return save;
         }
 
         array_iterator& operator+=(long long increment)
@@ -6884,7 +6864,7 @@ namespace core
 
         array_iterator operator--(int)
         {
-            array_iterator save = *this; --* this;return save;
+            array_iterator save = *this; --* this; return save;
         }
 
         array_iterator& operator-=(long long decrement)
@@ -7038,7 +7018,6 @@ namespace core
         }
         return s;
     }
-
 
     export template<class t>
         iarchive& operator>>(iarchive& s, array<t>& o)
@@ -7476,7 +7455,7 @@ namespace core
         time_greater = 1
     };
 
-    export struct time
+    export struct systime
     {
         unsigned year;
         unsigned month;
@@ -7487,7 +7466,7 @@ namespace core
         unsigned second;
         unsigned millisecond;
 
-        time(unsigned year,
+        systime(unsigned year,
             unsigned month = 0,
             unsigned day_of_week = 0,
             unsigned day = 0,
@@ -7496,18 +7475,18 @@ namespace core
             unsigned second = 0,
             unsigned millisecond = 0);
 
-        time(const date& date);
+        systime(const date& date);
 
-        time();
+        systime();
 
         operator date() const;
     };
 
-    time_compare operator==(const time& time_first,
-        const time& time_second);
+    time_compare operator==(const systime& time_first,
+        const systime& time_second);
 
-    difference operator-(const time& time_first,
-        const time& time_second);
+    difference operator-(const systime& time_first,
+        const systime& time_second);
 
 
     export std::ostream& operator<<(std::ostream& os, const difference& d)
@@ -7530,7 +7509,7 @@ namespace core
 
     date::date()
     {
-        time time_query;
+        systime time_query;
         *this = date(time_query.day,
             (unsigned)time_query.month,
             time_query.year);
@@ -7545,7 +7524,7 @@ namespace core
 
     void date::get()
     {
-        time time_query;
+        systime time_query;
         *this = (date)time_query;
     }
 
@@ -7820,19 +7799,8 @@ namespace core
     }
 
 
-    export struct systime
-    {
-        int hour;          // Range: 0 - 23
-        int minute;        // Range: 0 - 59
-        int second;        // Range: 0 - 59
-        int millisecond;   // Range: 0 - 999
-        int day;           // Current day of the month. Range: 1 - 31
-        int month;         // Current month of the year. Range: 1 - 12
-        int year;          // Current year
-    };
-
-    export time_compare operator==(const time& time_first,
-        const time& time_second)
+    export time_compare operator==(const systime& time_first,
+        const systime& time_second)
     {
         register int result;
 
@@ -7898,9 +7866,9 @@ namespace core
         day(0) {}
 
 
-    time::operator date() const { return date(day, month, year); }
+    export systime::operator date() const { return date(day, month, year); }
 
-        export template<class t, class compare>
+    export template<class t, class compare>
         std::ostream& operator<<(std::ostream& s, const list <t, compare>& o)
     {
         s << string(L"{");
@@ -7964,7 +7932,7 @@ namespace core
 
         stack_iterator operator++(int)
         {
-            stack_iterator<t> save = *this; ++* this;return save;
+            stack_iterator<t> save = *this; ++* this; return save;
         }
 
         stack_iterator& operator+=(unsigned long long increment)
@@ -8177,7 +8145,7 @@ namespace core
 
         queue_iterator operator++(int)
         {
-            queue_iterator save = *this; ++* this;return save;
+            queue_iterator save = *this; ++* this; return save;
         }
 
         queue_iterator& operator+=(unsigned long long increment)
@@ -8199,7 +8167,7 @@ namespace core
 
         queue_iterator operator--(int)
         {
-            queue_iterator save = *this; --* this;return save;
+            queue_iterator save = *this; --* this; return save;
         }
 
         queue_iterator& operator-=(unsigned long long decrement)
@@ -29331,7 +29299,7 @@ namespace core
     export extern "C" bool __stdcall set_process_working_set_size(handle process,
         ulong working_set_minimum,
         ulong working_set_maximum);
-    
+
     export extern "C" bool __stdcall set_process_working_set_size_extended(handle process,
         ulong working_set_minimum,
         ulong working_set_maximum,
@@ -38674,7 +38642,7 @@ namespace core
     // callback functions
     //--------------------------------------------------------------------------
 
-    extern "C" {export  typedef bool(__stdcall* enumerate_metafile_proc)(uint, uint, uint, const byte*, void*);}
+    extern "C" {export  typedef bool(__stdcall* enumerate_metafile_proc)(uint, uint, uint, const byte*, void*); }
 
     //--------------------------------------------------------------------------
     // represents a rectangle in a 2d coordinate system (integer coordinates)
@@ -39986,9 +39954,9 @@ namespace core
         uint _version;           // must be 1
         void* debug_event_callback;          // ignored on free builds
         bool suppress_background_thread;     // false unless you're prepared to call 
-                                             // the hook/unhook functions properly
+        // the hook/unhook functions properly
         bool suppress_external_codecs;       // false unless you want g_d_i+ only to use
-                                             // its internal image codecs.
+        // its internal image codecs.
 
         _startup_input(
             void* debug_event_callback = 0,
@@ -44444,7 +44412,7 @@ namespace core
         }
     };
 
-    time::time(const date& date_copy)
+    systime::systime(const date& date_copy)
         : hour(0),
         minute(0),
         second(0),
@@ -44454,7 +44422,7 @@ namespace core
         day(date_copy.get_day()),
         day_of_week(date_copy.get_day_of_week()) {}
 
-    time::time(unsigned year_set,
+    systime::systime(unsigned year_set,
         unsigned month_set,
         unsigned day_of_week_set,
         unsigned day_set,
@@ -44471,7 +44439,7 @@ namespace core
         second(second_set),
         millisecond(millisecond_set) {}
 
-    time::time()
+    systime::systime()
     {
         system_time get;
         get_local_time(&get);
@@ -44485,8 +44453,8 @@ namespace core
         millisecond = get.millisecond;
     }
 
-    export difference operator-(const time& time_first,
-        const time& time_second)
+    export difference operator-(const systime& time_first,
+        const systime& time_second)
     {
         time_compare time_compare_result = (time_first == time_second);
 
@@ -44500,8 +44468,8 @@ namespace core
         {
             difference difference_return;
 
-            time time_a(time_first);
-            time time_b(time_second);
+            systime time_a(time_first);
+            systime time_b(time_second);
 
             int millisecond_carry = (time_a.millisecond < time_b.millisecond) ? 1 : 0;
 
@@ -44593,6 +44561,2706 @@ namespace core
 
 using namespace core;
 
+namespace threaded
+{
+    export template <class t, class compare = core::compare<t>>
+        struct list : public semaphore   // circular, singly-linked list (with merge sort).
+    {
+        list_header<t> tail; // header node for the list.
+        list_node<t>* root;  // points to the last node in the list.
+        unsigned long long nodes;    // fast access to list size.
+
+        typedef list_iterator<t> iterator;
+
+        list() : nodes(0)
+        {
+            root = (list_node<t>*) & tail;
+            root->next = root;
+        }
+
+        list(const list<t>& copy) : nodes(0)
+        {
+            wait w(copy);
+            root = (list_node<t>*) & tail;
+            root->next = root;
+            for (t _t : copy) *this << _t;
+        }
+
+        template<class I>
+        list(I first, I last)
+        {
+            nodes = 0;
+            root = (list_node<t>*) & tail;
+            root->next = root;
+            while (first != last) *this << *first++;
+        }
+
+        list(std::initializer_list<t> l)
+        {
+            nodes = 0;
+            root = (list_node<t>*) & tail;
+            root->next = root;
+            for (t _t : l) *this << _t;
+        }
+
+        ~list() { erase(); }
+
+        list<t>& operator=(const list& copy)
+        {
+            wait w(*this);
+            wait wC(copy);
+
+            erase();
+            for (t _t : copy) *this << _t;
+            return *this;
+        }
+
+        void erase()
+        {
+            wait w(*this);
+
+            list_node<t>* n = tail.next;
+            while (n != (list_node<t>*) & tail)
+            {
+                list_node<t>* next = n->next;
+                delete n;
+                n = next;
+            }
+            nodes = 0;
+            root = (list_node<t>*) & tail;
+            root->next = root;
+        }
+
+        unsigned long long length() const { return nodes; }
+
+        list& operator<<(const t& data) { push(data); return *this; }
+
+        const t& back() const { if (root == (list_node<t>*) & tail) throw is_list_tail_exception(); return *iterator(*root); }
+
+        t& back() { if (root == (list_node<t>*) & tail) throw is_list_tail_exception(); return *iterator(*root); }
+
+        const t& front() const { if (root == (list_node<t>*) & tail) throw is_list_tail_exception(); return *iterator(*tail.next); }
+
+        t& front() { if (root == (list_node<t>*) & tail) throw is_list_tail_exception(); return *iterator(*tail.next); }
+
+        iterator begin() const { return *tail.next; }
+
+        iterator end() const { return *(list_node<t>*) & tail; }
+
+        iterator last() const { return *root; }
+
+        iterator push(const t& data)
+        {
+            wait w(*this);
+
+            list_node<t>* new_node = new list_node<t>(data);
+            new_node->next = (list_node<t>*) & tail;
+            root->next = new_node;
+            root = new_node;
+            ++nodes;
+            return *new_node;
+        }
+
+        void sort()
+        {
+            wait w(*this);
+
+            list_node<t>* root = (list_node<t>*) & tail;
+            if (nodes > 1) merge_sort<t, compare>(root);
+        }
+    };
+
+    export template <class t, class compare = core::compare<t>>
+        struct linked_list : public semaphore // doubly-linked linked linked_list with the doubly-linked version of the merge sort.
+    {
+        linked_list_header<t> tail;
+        unsigned long long nodes;
+
+        typedef linked_list_iterator<t> iterator;
+
+        linked_list()
+        {
+            nodes = 0;
+            linked_list_node<t>* root = (linked_list_node<t>*) & tail;
+            root->previous = root;
+            root->next = root;
+        }
+
+        template<class I>
+        linked_list(I first, I last)
+        {
+            nodes = 0;
+            linked_list_node<t>* root = (linked_list_node<t>*) & tail;
+            root->previous = root;
+            root->next = root;
+            while (first != last) insert(*first++);
+        }
+
+        linked_list(std::initializer_list<t> l)
+        {
+            nodes = 0;
+            linked_list_node<t>* root = (linked_list_node<t>*) & tail;
+            root->previous = root;
+            root->next = root;
+            for (t _t : l) insert(_t);
+        }
+
+        ~linked_list() { wait w(*this); erase(); }
+
+        linked_list(const linked_list& copy)
+        {
+            wait w(copy);
+
+            linked_list_node<t>* root = (linked_list_node<t>*) & tail;
+            root->previous = root;
+            root->next = root;
+            nodes = 0;
+            for (t _t : copy) insert(_t);
+        }
+
+        linked_list& operator=(const linked_list& copy)
+        {
+            wait w(*this);
+            wait wC(copy);
+
+            if (nodes) erase();
+            for (t _t : copy) insert(_t);
+            return *this;
+        }
+
+        unsigned long long length() const { return nodes; }
+
+        linked_list& operator<<(const t& data) { insert(data); return *this; }
+
+        iterator begin() const { return *(linked_list_node<t>*)tail.next; }
+
+        iterator end() const { return *(linked_list_node<t>*) & tail; }
+
+        void push(const t& data) { insert(data); }
+
+        iterator insert(const t& data)
+        {
+            wait w(*this);
+            linked_list_node<t>* new_node = new linked_list_node<t>(data);
+            linked_list_node<t>* root = (linked_list_node<t>*) & tail;
+            root->previous->next = new_node;
+            new_node->previous = root->previous;
+            root->previous = new_node;
+            new_node->next = root;
+            ++nodes;
+            return *new_node;
+        }
+
+        iterator insert(iterator i, const t& data)
+        {
+            wait w(*this);
+            linked_list_node<t>* node = i.node;
+            linked_list_node<t>* new_node = new linked_list_node<t>(data);
+            node->previous->next = new_node;
+            new_node->previous = node->previous;
+            node->previous = new_node;
+            new_node->next = node;
+            ++nodes;
+            return *new_node;
+        }
+
+        void erase(iterator i)
+        {
+            wait w(*this);
+            linked_list_node<t>* node = i.node;
+            if (node == (linked_list_node<t>*) & tail) throw is_list_tail_exception();
+            linked_list_node<t>* next = node->next;
+            node->previous->next = next;
+            next->previous = node->previous;
+            delete node;
+            --nodes;
+        }
+
+        void erase()
+        {
+            wait w(*this);
+            linked_list_node<t>* n = tail.next;
+            while (n != (linked_list_node<t>*) & tail)
+            {
+                linked_list_node<t>* next = n->next;
+                delete n;
+                n = next;
+            }
+            linked_list_node<t>* root = (linked_list_node<t>*) & tail;
+            root->previous = root;
+            root->next = root;
+            nodes = 0;
+        }
+
+        t pop()
+        {
+            wait w(*this);
+            linked_list_node<t>* last = tail.previous;
+            if (last != (linked_list_node<t>*) & tail)
+            {
+                last->previous->next = (linked_list_node<t>*) & tail;
+                tail.previous = last->previous;
+            }
+            else
+                throw is_list_tail_exception();
+            t r = last->data;
+            delete last;
+            nodes--;
+            return r;
+        }
+
+        iterator last() const { return *(linked_list_node<t>*)tail.previous; }
+
+        t& front()
+        {
+            linked_list_node<t>* f = tail.next;
+            if (f == (linked_list_node<t>*) & tail) throw is_list_tail_exception();
+            return f->data;
+        }
+
+        const t& front() const
+        {
+            linked_list_node<t>* f = tail.next;
+            if (f == (linked_list_node<t>*) & tail) throw is_list_tail_exception();
+            return f->data;
+        }
+
+        t& back()
+        {
+            linked_list_node<t>* b = tail.previous;
+            if (b == (linked_list_node<t>*) & tail) throw is_list_tail_exception();
+            return b->data;
+        }
+
+        const t& back() const
+        {
+            linked_list_node<t>* b = tail.previous;
+            if (b == (linked_list_node<t>*) & tail) throw is_list_tail_exception();
+            return b->data;
+        }
+
+        void sort()
+        {
+            wait w(*this);
+            linked_list_node<t>* root = (linked_list_node<t>*) & tail;
+            if (nodes > 1) merge_sort<t, compare>(root);
+        }
+    };
+
+    export template<class t, class compare>
+        std::ostream& operator<<(std::ostream& s, const linked_list<t, compare>& o)
+    {
+        wait w(o);
+        s << string(L"{");
+        linked_list_iterator<t> e = o.end();
+        linked_list_iterator<t> l = e; l--;
+        for (linked_list_iterator<t> i = o.begin(); i != e; ++i)
+        {
+            s << *i; if (i != l) s << string(L",");
+        }
+        s << string(L"}");
+        return s;
+    }
+
+    export template <class t, class less = core::less<t>>
+        struct set : public semaphore
+    {
+        node header;
+
+        typedef set_iterator<t> iterator;
+
+        set() {}
+
+        set(const set& copy) { wait w(copy);  for (t type : copy) *this << type; }
+
+        set(std::initializer_list<t> l)
+        {
+            for (t _t : l) insert(_t);
+        }
+
+        set(const set& A, const set& B, long long operation)
+        {
+            wait wA(A);
+            wait wB(B);
+
+            iterator first1 = A.begin();
+            iterator last1 = A.end();
+            iterator first2 = B.begin();
+            iterator last2 = B.end();
+
+            switch (operation)
+            {
+            case set_operation::_union:
+            {
+                while (first1 != last1 && first2 != last2)
+                {
+                    bool _less = less()(*first1, *first2);
+                    bool _greater = less()(*first2, *first1);
+
+                    if (_less)
+                    {
+                        insert(*first1);
+                        ++first1;
+                    }
+
+                    else if (_greater)
+                    {
+                        insert(*first2);
+                        ++first2;
+                    }
+
+                    else
+                    {
+                        insert(*first1);
+                        ++first1; ++first2;
+                    }
+                }
+
+                while (first1 != last1)
+                {
+                    insert(*first1);
+                    first1++;
+                }
+
+                while (first2 != last2)
+                {
+                    insert(*first2);
+                    first2++;
+                }
+            }
+            break;
+
+            case set_operation::intersection:
+            {
+                while (first1 != last1 && first2 != last2)
+                {
+                    bool is_less = less()(*first1, *first2);
+                    bool is_greater = less()(*first2, *first1);
+
+                    if (is_less)
+                        ++first1;
+
+                    else if (is_greater)
+                        ++first2;
+
+                    else
+                    {
+                        insert(*first1);
+                        ++first1; ++first2;
+                    }
+                }
+            }
+            break;
+
+            case set_operation::symmetric_difference:
+            {
+                while (first1 != last1 && first2 != last2)
+                {
+                    bool is_less = less()(*first1, *first2);
+                    bool is_greater = less()(*first2, *first1);
+
+                    if (is_less)
+                    {
+                        insert(*first1);
+                        ++first1;
+                    }
+
+                    else if (is_greater)
+                    {
+                        insert(*first2);
+                        ++first2;
+                    }
+
+                    else
+                    {
+                        ++first1; ++first2;
+                    }
+                }
+
+                while (first1 != last1)
+                {
+                    insert(*first1);
+                    ++first1;
+                }
+
+                while (first2 != last2)
+                {
+                    insert(*first2);
+                    ++first2;
+                }
+            }
+            break;
+
+            case set_operation::difference:
+            {
+                while (first1 != last1 && first2 != last2)
+                {
+                    bool is_less = less()(*first1, *first2);
+                    bool is_greater = less()(*first2, *first1);
+
+                    if (is_less)
+                    {
+                        insert(*first1);
+                        ++first1;
+                    }
+
+                    else if (is_greater)
+                    {
+                        insert(*first1);
+                        ++first1; ++first2;
+                    }
+
+                    else
+                    {
+                        ++first1; ++first2;
+                    }
+                }
+
+                while (first1 != last1)
+                {
+                    insert(*first1);
+                    ++first1;
+                }
+            }
+            break;
+
+            default:
+                throw invalid_set_operation_exception();
+            }
+        }
+
+        set& operator<<(const set& i)
+        {
+            wait w(*this);
+            wait wA(i);
+
+            for (t _t : i) *this << _t;
+            return *this;
+        }
+
+        ~set()
+        {
+            wait w(*this);
+            destroy((set_node<t>*)header.parent);
+        }
+
+        set& operator=(const set& copy)
+        {
+            wait w(*this);
+            wait wA(copy);
+
+            erase();
+            for (t _t : copy) *this << _t;
+            return *this;
+        }
+
+        long long length() const { wait w(*this);  return count(header.parent); }
+
+        set& operator<<(const t& element) { insert(element); return *this; }
+
+        set& operator>>(const t& element) { erase(element); return *this; }
+
+        iterator begin() const { return header.left; }
+
+        iterator end() const { return (node*)&header; }
+
+        t& front()
+        {
+            iterator i = begin();
+            if (i.is_header()) throw is_header_exception();
+            return *i;
+        }
+
+        const t& front() const
+        {
+            iterator i = begin();
+            if (i.is_header()) throw is_header_exception();
+            return *i;
+        }
+
+        t& back()
+        {
+            iterator i = end(); i--;
+            if (i.is_header()) throw is_header_exception();
+            return *i;
+        }
+
+        const t& back() const
+        {
+            iterator i = end(); i--;
+            if (i.is_header()) throw is_header_exception();
+            return *i;
+        }
+
+        iterator insert(const t& element) // insertion balances from leaf-to-root.
+        {
+            wait w(*this);
+
+            node* root_node = header.parent;
+
+            if (root_node == 0)
+            {
+                root_node = new set_node<t>(element, &header);
+                header.left = root_node;
+                header.right = root_node;
+                header.parent = root_node;
+                return root_node;
+            }
+
+            else
+            {
+                for (; ; )
+                {
+                    bool is_less = less()(element, ((set_node<t>*)root_node)->element);
+                    if (is_less)
+                    {
+                        if (root_node->left != 0)
+                        {
+                            root_node = root_node->left;
+                            continue;
+                        }
+                        else
+                        {
+                            node* new_node = new set_node<t>(element, root_node);
+                            root_node->left = new_node;
+                            adjust_add(new_node);
+                            return new_node;
+                        }
+                    }
+
+                    bool is_greater = less()(((set_node<t>*)root_node)->element, element);
+
+                    if (!is_less && !is_greater) // if the entry exists, replace it.
+                    {
+                        ((set_node<t>*)root_node)->element = element;
+                        return root_node;
+                    }
+
+                    else
+                    {
+                        if (root_node->right != 0)
+                            root_node = root_node->right;
+                        else
+                        {
+                            node* new_node = new set_node<t>(element, root_node);
+                            root_node->right = new_node;
+                            adjust_add(new_node);
+                            return new_node;
+                        }
+                    }
+                }
+            }
+        }
+
+        void erase(const t& element)
+        {
+            wait w(*this);
+
+            node* root_node = header.parent;
+
+            for (; ; )
+            {
+                if (root_node == 0) throw entry_not_found_exception();
+
+                bool is_less = less()(element, ((set_node<t>*)root_node)->element);
+
+                if (is_less)
+                {
+                    root_node = root_node->left;
+                    continue;
+                }
+
+                bool is_greater = less()(((set_node<t>*)root_node)->element, element);
+
+                if (is_greater)
+                    root_node = root_node->right;
+                else
+                {
+                    if (root_node->left != 0 && root_node->right != 0)
+                    {
+                        node* replace = root_node->left;
+                        while (replace->right != 0) replace = replace->right;
+                        swap_nodes(root_node, replace);
+                    }
+
+                    node* parent = root_node->parent;
+
+                    long long from = (parent->left == root_node) ? direction::from_left : direction::from_right;
+
+                    if (root_node->left == 0)
+                    {
+                        if (parent == &header)
+                            header.parent = root_node->right;
+                        else if (from == direction::from_left)
+                            parent->left = root_node->right;
+                        else
+                            parent->right = root_node->right;
+
+                        if (root_node->right != 0) root_node->right->parent = parent;
+                    }
+                    else
+                    {
+                        if (parent == &header)
+                            header.parent = root_node->left;
+                        else if (from == direction::from_left)
+                            parent->left = root_node->left;
+                        else
+                            parent->right = root_node->left;
+
+                        if (root_node->left != 0) root_node->left->parent = parent;
+                    }
+
+                    adjust_remove(parent, from);
+                    delete (set_node<t>*)root_node;
+                    break;
+                }
+            }
+        }
+
+        void erase(iterator i)
+        {
+            wait w(*this);
+
+            node* root_node = i._node;
+
+            if (root_node->is_header()) throw is_header_exception();
+
+            if (root_node->left != 0 && root_node->right != 0)
+            {
+                node* replace = root_node->left;
+                while (replace->right != 0) replace = replace->right;
+                swap_nodes(root_node, replace);
+            }
+
+            node* parent = root_node->parent;
+
+            long long from = (parent->left == root_node) ? direction::from_left : direction::from_right;
+
+            if (root_node->left == 0)
+            {
+                if (parent == &header)
+                    header.parent = root_node->right;
+                else if (from == direction::from_left)
+                    parent->left = root_node->right;
+                else
+                    parent->right = root_node->right;
+
+                if (root_node->right != 0) root_node->right->parent = parent;
+            }
+            else
+            {
+                if (parent == &header)
+                    header.parent = root_node->left;
+                else if (from == direction::from_left)
+                    parent->left = root_node->left;
+                else
+                    parent->right = root_node->left;
+
+                if (root_node->left != 0) root_node->left->parent = parent;
+            }
+
+            adjust_remove(parent, from);
+            delete (set_node<t>*)root_node;
+        }
+
+        //bool operator[](const t& element) const { return contains(element); }
+
+        bool contains(const t& element) const
+        {
+            wait w(*this);
+
+            if (!header.parent)
+                return false;
+            else
+            {
+                const node* search_node = header.parent;
+                do
+                {
+                    bool is_less = less()(element, ((set_node<t>*)search_node)->element);
+                    if (is_less) { search_node = search_node->left; continue; }
+                    bool is_greater = less()(((set_node<t>*)search_node)->element, element);
+                    if (is_greater) search_node = search_node->right;
+                    else break;
+                } while (search_node);
+                return search_node != 0;
+            }
+        }
+
+        t* locate(const t& element)
+        {
+            wait w(*this);
+
+            if (!header.parent)
+                return 0;
+            else
+            {
+                const node* search_node = header.parent;
+
+                do
+                {
+                    bool _less = less()(element, ((set_node<t>*)search_node)->element);
+                    if (_less < 0) { search_node = search_node->left; continue; }
+                    bool _greater = less()(((set_node<t>*)search_node)->element, element);
+                    if (_greater > 0) search_node = search_node->right;
+                    else break;
+
+                } while (search_node);
+
+                if (search_node == 0) return 0;
+
+                return &((set_node<t>*)search_node)->element;
+            }
+        }
+
+        iterator find(const t& element) const
+        {
+            wait w(*this);
+
+            if (!header.parent)
+                throw entry_not_found_exception();
+            else
+            {
+                const node* search_node = header.parent;
+
+                do
+                {
+                    bool _less = less()(element, ((set_node<t>*)search_node)->element);
+                    if (_less) { search_node = search_node->left; continue; }
+                    bool _greater = less()(((set_node<t>*)search_node)->element, element);
+                    if (_greater) search_node = search_node->right;
+                    else break;
+
+                } while (search_node);
+
+                if (search_node == 0) throw entry_not_found_exception();
+
+                return (node*)search_node;
+            }
+        }
+
+        t& get(const t& element)
+        {
+            iterator i = find(element);
+            return *i;
+        }
+
+        const t& get(const t& element) const
+        {
+            iterator i = find(element);
+            return *i;
+        }
+
+        void erase()
+        {
+            wait w(*this);
+            destroy((set_node<t>*)header.parent);
+            header.left = &header;
+            header.right = &header;
+            header.parent = 0;
+        }
+
+        iterator after(const t& element) const
+        {
+            wait w(*this);
+
+            const node* y = &header;
+            const node* x = header.parent;
+
+            while (x != 0)
+                if (less()(element, ((set_node<t>*)x)->element))
+                {
+                    y = x; x = x->left;
+                }
+                else
+                    x = x->right;
+
+            return (node*)y;
+        }
+
+        iterator after_equals(const t& element) const
+        {
+            wait w(*this);
+
+            const node* y = &header;
+            const node* x = header.parent;
+
+            while (x != 0)
+            {
+                bool _less = less()(element, ((set_node<t>*)x)->element);
+                bool _greater = less()(((set_node<t>*)x)->element, element);
+                if (!_less && !_greater)
+                {
+                    y = x; break;
+                }
+                else if (_less)
+                {
+                    y = x; x = x->left;
+                }
+                else
+                    x = x->right;
+            }
+
+            return (node*)y;
+        }
+
+        iterator before(const t& element) const
+        {
+            wait w(*this);
+
+            const node* y = &header;
+            const node* x = header.parent;
+
+            while (x != 0)
+            {
+                if (!less()(((set_node<t>*)x)->element, element))
+                {
+                    x = x->left;
+                }
+                else
+                {
+                    y = x; x = x->right;
+                }
+            }
+            return (node*)y;
+        }
+
+        iterator before_equals(const t& element) const
+        {
+            wait w(*this);
+
+            const node* y = &header;
+            const node* x = header.parent;
+
+            while (x != 0)
+            {
+                bool _less = less()(element, ((set_node<t>*)x)->element);
+                bool _greater = less()(((set_node<t>*)x)->element, element);
+                if (!_less && !_greater)
+                {
+                    y = x; break;
+                }
+                else if (_less)
+                    x = x->left;
+                else
+                {
+                    y = x; x = x->right;
+                }
+            }
+
+            return (node*)y;
+        }
+
+        iterator last() const { return header.right; }
+
+        long long depth() const { wait w(*this);  return depth(header.parent); }
+
+        node* get_first()
+        {
+            if (!header.parent)
+                return &header;
+
+            else
+            {
+                node* search_node = header.parent;
+                while (search_node->left) search_node = search_node->left;
+                return search_node;
+            }
+        }
+
+        node* get_last()
+        {
+            if (!header.parent)
+                return &header;
+
+            else
+            {
+                node* search_node = header.parent;
+                while (search_node->right) search_node = search_node->right;
+                return search_node;
+            }
+        }
+
+        void destroy(set_node<t>* root_node)
+        {
+            if (root_node)
+            {
+                if (root_node->left)
+                    destroy((set_node<t>*)root_node->left);
+
+                if (root_node->right)
+                    destroy((set_node<t>*)root_node->right);
+
+                delete root_node;
+            }
+        }
+    };
+
+    export template<class t, class less = core::less<t>>
+        inline set<t, less> operator|(const set<t, less>& a, const set<t, less>& b)
+    {
+        set<t, less> r(a, b, set_operation::_union); return r;
+    }
+
+    export template<class t, class less = core::less<t>>
+        inline set<t, less> operator&(const set<t, less>& a, const set<t, less>& b)
+    {
+        set<t, less> r(a, b, set_operation::intersection); return r;
+    }
+
+    export template<class t, class less = core::less<t>>
+        inline set<t, less> operator^(const set<t, less>& a, const set<t, less>& b)
+    {
+        set<t, less> r(a, b, set_operation::symmetric_difference); return r;
+    }
+
+    export template<class t, class less = core::less<t>>
+        inline set<t, less> operator-(const set<t, less>& a, const set<t, less>& b)
+    {
+        set<t, less> r(a, b, set_operation::difference); return r;
+    }
+
+    export template<class t, class less = core::less<t>>
+        inline bool operator==(const set<t, less>& a, const set<t, less>& b)
+    {
+        wait wA(a);
+        wait wB(b);
+
+        set_iterator<t> first1 = a.begin();
+        set_iterator<t> last1 = a.end();
+        set_iterator<t> first2 = b.begin();
+        set_iterator<t> last2 = b.end();
+
+        bool equals = true;
+
+        while (first1 != last1 && first2 != last2)
+        {
+            bool _less = less()(*first1, *first2);
+            bool _greater = less()(*first2, *first1);
+
+            if (_less)
+            {
+                equals = false; break;
+            }
+            else if (_greater)
+            {
+                equals = false; break;
+            }
+            else
+            {
+                ++first1; ++first2;
+            }
+        }
+
+        if (equals)
+        {
+            if (first1 != last1) equals = false;
+            if (first2 != last2) equals = false;
+        }
+
+        return equals;
+    }
+
+    export template<class t, class less = core::less<t>>
+        inline bool operator!=(const set<t, less>& a, const set<t, less>& b) { return !(a == b); }
+
+    export template<class t, class less = core::less<t>>
+        int compare_sets(const set<t, less>& a, const set<t, less>& b)
+    {
+        wait wA(a);
+        wait wB(b);
+
+        set_iterator<t> first1 = a.begin();
+        set_iterator<t> last1 = a.end();
+        set_iterator<t> first2 = b.begin();
+        set_iterator<t> last2 = b.end();
+
+        while (first1 != last1 && first2 != last2)
+        {
+            bool _less = less()(*first1, *first2);
+            bool _greater = less()(*first2, *first1);
+            if (_less)
+                return -1;
+            else if (_greater)
+                return 1;
+            else
+            {
+                ++first1; ++first2;
+            }
+        }
+
+        if (first1 != last1) return 1;
+        if (first2 != last2) return -1;
+
+        return 0;
+    }
+
+    export template<class t, class less = core::less<t>>
+        bool operator<(const set<t, less>& a, const set<t, less>& b)
+    {
+        return compare_sets(a, b) < 0;
+    }
+
+    export template<class t, class less = core::less<t>>
+        oarchive& operator<<(oarchive& s, const set<t, less>& o)
+    {
+        wait w(o);
+        s << o.length();
+        set_iterator<t> e = o.end();
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
+        {
+            s << *i;
+        }
+        return s;
+    }
+
+    export template<class t, class less = core::less<t>>
+        iarchive& operator>>(iarchive& s, set<t, less>& o)
+    {
+        wait w(o);
+        long long length;
+        s >> length;
+        for (long long i = 0; i < length; i++)
+        {
+            t _t;
+            s >> _t;
+            o << _t;
+        }
+        return s;
+    }
+
+    export template<class t, class less = core::less<t>>
+        std::ostream& operator<<(std::ostream& s, const set<t, less>& o)
+    {
+        wait w(o);
+        s << string(L"{");
+        set_iterator<t> e = o.end();
+        set_iterator<t> l = e - 1;
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
+        {
+            s << *i; if (i != l) s << string(L",");
+        }
+        s << string(L"}");
+        return s;
+    }
+
+    export template<class t, class less = core::less<t>>
+        std::wostream& operator<<(std::wostream& s, const set<t, less>& o)
+    {
+        wait w(o);
+
+        s << string(L"{");
+        set_iterator<t> e = o.end();
+        set_iterator<t> l = e - 1;
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
+        {
+            s << *i; if (i != l) s << string(L",");
+        }
+        s << string(L"}");
+        return s;
+    }
+
+    export template <class t, class less = core::less<t>>
+        struct multiset : public semaphore
+    {
+        node header;
+
+        typedef set_iterator<t> iterator;
+
+        multiset() {}
+
+        multiset(const multiset& copy) { wait w(copy);  for (t tiip : copy) *this << tiip; }
+
+        multiset(std::initializer_list<t> l) { for (t _t : l) insert(_t); }
+
+        multiset& operator<<(const multiset& i)
+        {
+            wait w(*this);
+            wait wB(i);
+            for (t _t : i) *this << _t;
+            return *this;
+        }
+
+        template<class I>
+        multiset(I first, I last)
+        {
+            while (first != last) insert(*first++);
+        }
+
+        ~multiset()
+        {
+            wait w(*this);
+            destroy((set_node<t>*)header.parent);
+        }
+
+        multiset& operator=(const multiset& copy)
+        {
+            wait w(*this);
+            wait wA(copy);
+            erase();
+            for (t _t : copy) *this << _t;
+            return *this;
+        }
+
+        long long length() const { wait w(*this);  return count(header.parent); }
+
+        multiset& operator<<(const t& element) { insert(element); return *this; }
+
+        multiset& operator>>(const t& element) { erase(element); return *this; }
+
+        iterator begin() const { return header.left; }
+
+        iterator end() const { return (node*)&header; }
+
+        t& front()
+        {
+            iterator i = begin();;
+            return *i;
+        }
+
+        const t& front() const
+        {
+            iterator i = begin();
+            return *i;
+        }
+
+        t& back()
+        {
+            iterator i = end(); i--;
+            return *i;
+        }
+
+        const t& back() const
+        {
+            iterator i = end(); i--;
+            return *i;
+        }
+
+        iterator insert(const t& element)
+        {
+            wait w(*this);
+
+            node* root_node = header.parent;
+
+            if (root_node == 0)
+            {
+                root_node = new set_node<t>(element, &header);
+                header.left = root_node;
+                header.right = root_node;
+                header.parent = root_node;
+                return root_node;
+            }
+
+            else
+            {
+                for (; ; )
+                {
+                    bool is_less = less()(element, ((set_node<t>*)root_node)->element);
+
+                    if (is_less)
+                    {
+                        if (root_node->left != 0)
+                            root_node = root_node->left;
+                        else
+                        {
+                            node* new_node = new set_node<t>(element, root_node);
+                            root_node->left = new_node;
+                            adjust_add(new_node);
+                            return new_node;
+                        }
+                    }
+
+                    else
+                    {
+                        if (root_node->right != 0)
+                            root_node = root_node->right;
+                        else
+                        {
+                            node* new_node = new set_node<t>(element, root_node);
+                            root_node->right = new_node;
+                            adjust_add(new_node);
+                            return new_node;
+                        }
+                    }
+                }
+            }
+        }
+
+        void erase(iterator i)
+        {
+            wait w(*this);
+
+            node* root_node = i._node;
+
+            if (root_node->is_header()) throw is_header_exception();
+
+            if (root_node->left != 0 && root_node->right != 0)
+            {
+                node* replace = root_node->left;
+                while (replace->right != 0) replace = replace->right;
+                swap_nodes(root_node, replace);
+            }
+
+            node* parent = root_node->parent;
+
+            long long from = (parent->left == root_node) ? direction::from_left : direction::from_right;
+
+            if (root_node->left == 0)
+            {
+                if (parent == &header)
+                    header.parent = root_node->right;
+                else if (from == direction::from_left)
+                    parent->left = root_node->right;
+                else
+                    parent->right = root_node->right;
+
+                if (root_node->right != 0) root_node->right->parent = parent;
+            }
+            else
+            {
+                if (parent == &header)
+                    header.parent = root_node->left;
+                else if (from == direction::from_left)
+                    parent->left = root_node->left;
+                else
+                    parent->right = root_node->left;
+
+                if (root_node->left != 0) root_node->left->parent = parent;
+            }
+
+            adjust_remove(parent, from);
+            delete (set_node<t>*)root_node;
+        }
+
+        bool operator[](const t& element) const { return contains(element); }
+
+        void erase()
+        {
+            wait w(*this);
+            destroy((set_node<t>*)header.parent);
+            header.left = &header;
+            header.right = &header;
+            header.parent = 0;
+        }
+
+        iterator after(const t& element) const
+        {
+            wait w(*this);
+
+            const node* y = &header;
+            const node* x = header.parent;
+
+            while (x != 0)
+                if (less()(element, ((set_node<t>*)x)->element))
+                {
+                    y = x; x = x->left;
+                }
+                else
+                    x = x->right;
+
+            return (node*)y;
+        }
+
+        iterator after_equals(const t& element) const
+        {
+            wait w(*this);
+
+            const node* y = &header;
+            const node* x = header.parent;
+
+            while (x != 0)
+            {
+                bool _less = less()(element, ((set_node<t>*)x)->element);
+                bool _greater = less()(((set_node<t>*)x)->element, element);
+                if (!_less && !_greater)
+                {
+                    y = x; break;
+                }
+                else if (_less)
+                {
+                    y = x; x = x->left;
+                }
+                else
+                    x = x->right;
+            }
+
+            return (node*)y;
+        }
+
+        iterator before(const t& element) const
+        {
+            wait w(*this);
+
+            const node* y = &header;
+            const node* x = header.parent;
+
+            while (x != 0)
+            {
+                if (!less()(((set_node<t>*)x)->element, element))
+                {
+                    x = x->left;
+                }
+                else
+                {
+                    y = x; x = x->right;
+                }
+            }
+            return (node*)y;
+        }
+
+        iterator before_equals(const t& element) const
+        {
+            wait w(*this);
+
+            const node* y = &header;
+            const node* x = header.parent;
+
+            while (x != 0)
+            {
+                bool _less = less()(element, ((set_node<t>*)x)->element);
+                bool _greater = less()(((set_node<t>*)x)->element, element);
+                if (!_less && !_greater)
+                {
+                    y = x; break;
+                }
+                else if (_less)
+                    x = x->left;
+                else
+                {
+                    y = x; x = x->right;
+                }
+            }
+
+            return (node*)y;
+        }
+
+        iterator last() const { return header.right; }
+
+        long long depth() const { wait w(*this);  return depth(header.parent); }
+
+        list<t> find(const t& element) const
+        {
+            wait w(*this);
+
+            if (!header.parent)
+                throw entry_not_found_exception();
+            else
+            {
+                const node* search_node = header.parent;
+
+                do
+                {
+                    bool _less = less()(element, ((set_node<t>*)search_node)->element);
+                    if (_less) { search_node = search_node->left; continue; }
+                    bool _greater = less()(((set_node<t>*)search_node)->element, element);
+                    if (_greater) search_node = search_node->right;
+                    else break;
+                } while (search_node);
+
+                if (search_node == 0) throw entry_not_found_exception();
+
+                list<t> ret;
+
+                iterator i((node*)search_node); // backup while equals
+                i--;
+                while (!(i.is_header()) && !(less()(*i, element) || less()(element, *i))) i--;
+                i++;
+
+                for (;;)
+                {
+                    ret << *i;
+                    i++;
+                    if (i.is_header()) break;
+                    if (less()(*i, element)) break;
+                    if (less()(element, *i)) break;
+                }
+
+                return ret;
+            }
+        }
+
+        void erase(const t& element)
+        {
+            wait w(*this);
+
+            if (!header.parent)
+                throw entry_not_found_exception();
+            else
+            {
+                const node* search_node = header.parent;
+
+                do
+                {
+                    bool _less = less()(element, ((set_node<t>*)search_node)->element);
+                    if (_less) { search_node = search_node->left; continue; }
+                    bool _greater = less()(((set_node<t>*)search_node)->element, element);
+                    if (_greater) search_node = search_node->right;
+                    else break;
+
+                } while (search_node);
+
+                if (search_node == 0) throw entry_not_found_exception();
+
+                iterator i((node*)search_node); // backup while equals
+                i--;
+                while (!i.is_header() && !(less()(*i, element) || less()(element, *i))) i--;
+                i++;
+
+                list<iterator> to_erase;
+
+                for (;;)
+                {
+                    to_erase << i;
+                    i++;
+                    if (i.is_header()) break;
+                    if (less()(*i, element)) break;
+                    if (less()(element, *i)) break;
+                }
+
+                for (iterator k : to_erase) erase(k);
+            }
+        }
+
+        node* get_first()
+        {
+            if (!header.parent)
+                return &header;
+
+            else
+            {
+                node* search_node = header.parent;
+                while (search_node->left) search_node = search_node->left;
+                return search_node;
+            }
+        }
+
+        node* get_last()
+        {
+            if (!header.parent)
+                return &header;
+
+            else
+            {
+                node* search_node = header.parent;
+                while (search_node->right) search_node = search_node->right;
+                return search_node;
+            }
+        }
+
+        void destroy(set_node<t>* root_node)
+        {
+            if (root_node)
+            {
+                if (root_node->left)
+                    destroy((set_node<t>*)root_node->left);
+
+                if (root_node->right)
+                    destroy((set_node<t>*)root_node->right);
+
+                delete root_node;
+            }
+        }
+
+    };
+
+    export template<class t, class less = core::less<t>>
+        inline multiset<t, less> operator|(const multiset<t, less>& a, const multiset<t, less>& b)
+    {
+        multiset<t, less> r(a, b, set_operation::_union); return r;
+    }
+
+    export template<class t, class less = core::less<t>>
+        inline multiset<t, less> operator&(const multiset<t, less>& a, const multiset<t, less>& b)
+    {
+        multiset<t, less> r(a, b, set_operation::intersection); return r;
+    }
+
+    export template<class t, class less = core::less<t>>
+        inline multiset<t, less> operator^(const multiset<t, less>& a, const multiset<t, less>& b)
+    {
+        multiset<t, less> r(a, b, set_operation::symmetric_difference); return r;
+    }
+
+    export template<class t, class less = core::less<t>>
+        inline multiset<t, less> operator-(const multiset<t, less>& a, const multiset<t, less>& b)
+    {
+        multiset<t, less> r(a, b, set_operation::difference); return r;
+    }
+
+    export template<class t, class less = core::less<t>>
+        inline bool operator==(const multiset<t, less>& a, const multiset<t, less>& b)
+    {
+        wait wA(a);
+        wait wB(b);
+
+        set_iterator<t> first1 = a.begin();
+        set_iterator<t> last1 = a.end();
+        set_iterator<t> first2 = b.begin();
+        set_iterator<t> last2 = b.end();
+
+        bool equals = true;
+
+        while (first1 != last1 && first2 != last2)
+        {
+            bool _less = less()(*first1, *first2);
+            bool _greater = less()(*first2, *first1);
+
+            if (_less)
+            {
+                equals = false; break;
+            }
+            else if (_greater)
+            {
+                equals = false; break;
+            }
+            else
+            {
+                ++first1; ++first2;
+            }
+        }
+
+        if (equals)
+        {
+            if (first1 != last1) equals = false;
+            if (first2 != last2) equals = false;
+        }
+
+        return equals;
+    }
+
+    export template<class t, class less = core::less<t>>
+        inline bool operator!=(const multiset<t, less>& a, const multiset<t, less>& b) { return !(a == b); }
+
+    export template<class t, class less = core::less<t>>
+        int compare_multisets(const multiset<t, less>& a, const multiset<t, less>& b)
+    {
+        wait wA(a);
+        wait wB(b);
+
+        set_iterator<t> first1 = a.begin();
+        set_iterator<t> last1 = a.end();
+        set_iterator<t> first2 = b.begin();
+        set_iterator<t> last2 = b.end();
+
+        while (first1 != last1 && first2 != last2)
+        {
+            bool _less = less()(*first1, *first2);
+            bool _greater = less()(*first2, *first1);
+            if (_less)
+                return -1;
+            else if (_greater)
+                return 1;
+            else
+            {
+                ++first1; ++first2;
+            }
+        }
+
+        if (first1 != last1) return 1;
+        if (first2 != last2) return -1;
+
+        return 0;
+    }
+
+    export template<class t, class less = core::less<t>>
+        std::ostream& operator<<(std::ostream& s, const multiset<t, less>& o)
+    {
+        wait w(o);
+
+        s << string(L"{");
+        set_iterator<t> e = o.end();
+        set_iterator<t> l = e - 1;
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
+        {
+            s << *i; if (i != l) s << string(L",");
+        }
+        s << string(L"}");
+        return s;
+    }
+
+    export template<class t, class less = core::less<t>>
+        std::wostream& operator<<(std::wostream& s, const multiset<t, less>& o)
+    {
+        wait w(o);
+
+        s << string(L"{");
+        set_iterator<t> e = o.end();
+        set_iterator<t> l = e - 1;
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
+        {
+            s << *i; if (i != l) s << string(L",");
+        }
+        s << string(L"}");
+        return s;
+    }
+
+    export template<class t, class less = core::less<t>>
+        oarchive& operator<<(oarchive& s, const multiset<t, less>& o)
+    {
+        wait w(o);
+
+        s << o.length();
+        set_iterator<t> e = o.end();
+        set_iterator<t> l = e - 1;
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
+        {
+            s << *i;
+        }
+        return s;
+    }
+
+    export template<class t, class less = core::less<t>>
+        iarchive& operator>>(iarchive& s, multiset<t, less>& o)
+    {
+        wait w(o);
+
+        long long length;
+        s >> length;
+        for (long long i = 0; i < length; i++)
+        {
+            t _t;
+            s >> _t;
+            o << _t;
+        }
+        return s;
+    }
+
+    export template <class k, class t>
+        struct map : public set<key_value<k, t>>
+    {
+        map() {}
+
+        map(std::initializer_list<std::pair<k, t>> l)
+        {
+            for (std::pair<k, t> _t : l) insert(_t.first, _t.second);
+        }
+
+        void insert(const k& key, const t& data) { set<key_value<k, t>>::insert(key_value<k, t>(key, data)); }
+
+        void erase(const k& key) { set<key_value<k, t>>::erase(key_value<k, t>(key)); }
+
+        const t& operator[](const k& key) const
+        {
+            set_iterator < key_value<k, t>> i = find(key_value<k, t>(key));
+            return (*i).value;
+        }
+        struct reference
+        {
+            map* m;
+            const k* key;
+
+            reference(map& map_set, const k& key_set)
+                : m(&map_set), key(&key_set) {}
+
+            reference& operator=(const t& value)
+            {
+                m->insert(*key, value);
+                return *this;
+            }
+
+            operator t& () const
+            {
+                set_iterator < key_value<k, t>> i = m->find(key_value<k, t>(*key));
+                return (*i).value;
+            }
+        };
+
+        reference operator[](const k& key) { return reference(*this, key); }
+
+        map& operator>>(const k& key) { erase(key); return *this; }
+
+        t* locate(const k& key) const { key_value<k, t>* kv = locate(key_value(key));  if (kv) return &(kv->value); else return 0; }
+
+        bool contains(const k& key) const { return contains(key_value<k, t>(key)); }
+    };
+
+    export template<class k, class t>
+        inline oarchive& operator<<(oarchive& s, const map<k, t>& o)
+    {
+        wait w(o);
+
+        s << o.length();
+        set_iterator<key_value<k, t>> e = o.end();
+        for (set_iterator<key_value<k, t>> i = o.begin(); i != e; ++i)
+        {
+            s << *i;
+        }
+        return s;
+    }
+
+    export template<class k, class t>
+        inline iarchive& operator>>(iarchive& s, map<k, t>& o)
+    {
+        wait w(o);
+
+        long long length;
+        s >> length;
+        for (long long i = 0; i < length; i++)
+        {
+            key_value<k, t> kv;
+            s >> kv;
+            o << kv;
+        }
+        return s;
+    }
+
+    export template<class k, class t>
+        inline std::ostream& operator<<(std::ostream& s, const map<k, t>& o)
+    {
+        wait w(o);
+
+        s << "{";
+        set_iterator<key_value<k, t>> e = o.end();
+        set_iterator<key_value<k, t>> l = e - 1;
+        for (set_iterator<key_value<k, t>> i = o.begin(); i != e; ++i)
+        {
+            s << "(" << (*i).key << "," << (*i).value << ")"; if (i != l) s << ",";
+        }
+        s << "}";
+        return s;
+    }
+
+    export template<class k, class t>
+        inline std::wostream& operator<<(std::wostream& s, const map<k, t>& o)
+    {
+        wait w(o);
+
+        s << "{";
+        set_iterator<key_value<k, t>> e = o.end();
+        set_iterator<key_value<k, t>> l = e - 1;
+        for (set_iterator<key_value<k, t>> i = o.begin(); i != e; ++i)
+        {
+            s << "(" << (*i).key << "," << (*i).value << ")"; if (i != l) s << ",";
+        }
+        s << "}";
+        return s;
+    }
+
+    export template <class k, class t>
+        struct multimap : public multiset<key_value<k, t>>
+    {
+        multimap() {}
+
+        multimap(std::initializer_list<std::pair<k, t>> l)
+        {
+            for (std::pair<k, t> _t : l) insert(_t.first, _t.second);
+        }
+
+        void insert(const k& key, const t& data) { multiset<key_value<k, t>>::insert(key_value<k, t>(key, data)); }
+
+        void erase(const k& key) { multiset<key_value<k, t>>::erase(key_value<k, t>(key)); }
+
+        list<t> operator[](const k& key) const
+        {
+            wait w(*this);
+
+            list<key_value<k, t>> fl = multiset<key_value<k, t>>::find(key_value<k, t>(key));
+            list<t> ret;
+            for (key_value<k, t> kv : fl) ret << kv.value;
+            return ret;
+        }
+
+        multimap& operator>>(const k& key) { erase(key); return *this; }
+
+        bool contains(const k& key) { return contains(key_value<k, t>(key)); }
+    };
+
+    export template<class k, class t>
+        inline oarchive& operator<<(oarchive& s, const multimap<k, t>& o)
+    {
+        wait w(o);
+
+        s << o.length();
+        set_iterator<key_value<k, t>> e = o.end();
+        for (set_iterator<key_value<k, t>> i = o.begin(); i != e; ++i)
+        {
+            s << *i;
+        }
+        return s;
+    }
+
+    export template<class k, class t>
+        inline iarchive& operator>>(iarchive& s, multimap<k, t>& o)
+    {
+        wait w(o);
+
+        long long length;
+        s >> length;
+        for (long long i = 0; i < length; i++)
+        {
+            key_value<k, t> kv;
+            s >> kv;
+            o << kv;
+        }
+        return s;
+    }
+
+    export template<class k, class t>
+        inline std::ostream& operator<<(std::ostream& s, const multimap<k, t>& o)
+    {
+        wait w(o);
+
+        s << "{";
+        set_iterator<key_value<k, t>> e = o.end();
+        set_iterator<key_value<k, t>> l = e - 1;
+        for (set_iterator<key_value<k, t>> i = o.begin(); i != e; ++i)
+        {
+            s << "(" << (*i).key << "," << (*i).value << ")"; if (i != l) s << ",";
+        }
+        s << "}";
+        return s;
+    }
+
+    export template<class k, class t>
+        inline std::wostream& operator<<(std::wostream& s, const multimap<k, t>& o)
+    {
+        wait w(o);
+
+        s << "{";
+        set_iterator<key_value<k, t>> e = o.end();
+        set_iterator<key_value<k, t>> l = e - 1;
+        for (set_iterator<key_value<k, t>> i = o.begin(); i != e; ++i)
+        {
+            s << "(" << (*i).key << "," << (*i).value << ")"; if (i != l) s << ",";
+        }
+        s << "}";
+        return s;
+    }
+
+    export template <class k, class t, class less = core::less<k>>
+        struct dictionary : semaphore
+    {
+        node header;
+
+        typedef dictionary_iterator<k, t> iterator;
+
+        dictionary() {}
+
+        dictionary(std::initializer_list<std::pair<k, t>> l)
+        {
+            for (std::pair<k, t> _t : l) insert(_t.first, _t.second);
+        }
+
+        dictionary(const dictionary& copy)
+        {
+            wait w(copy);
+            for (key_value<k, t> kv : copy) (*this)[kv.key] = kv.value;
+        }
+
+        ~dictionary()
+        {
+            wait w(*this);
+            destroy((dictionary_node<k, t>*)header.parent);
+        }
+
+        dictionary& operator=(const dictionary& copy)
+        {
+            wait wA(*this);
+            wait wB(copy);
+            erase();
+            for (key_value<k, t> kv : copy) (*this)[kv.key] = kv.value;
+            return *this;
+        }
+
+        dictionary& operator<<(key_value<k, t> kv)
+        {
+            insert(kv.key, kv.value);
+            return *this;
+        }
+
+        long long length() const { wait w(*this); return count(header.parent); }
+
+        iterator begin() const { return header.left; }
+
+        iterator end() const { return (node*)&header; }
+
+        iterator insert(const k& key,
+            const t& data)
+        {
+            wait w(*this);
+
+            node* root_node = header.parent;
+
+            if (root_node == 0)
+            {
+                root_node = new dictionary_node<k, t>(key, data, &header);
+                header.left = root_node;
+                header.right = root_node;
+                header.parent = root_node;
+                return root_node;
+            }
+
+            else
+            {
+                for (; ; )
+                {
+                    bool _less = less()(key, ((dictionary_node<k, t>*)root_node)->key);
+                    bool _greater = less()(((dictionary_node<k, t>*)root_node)->key, key);
+
+                    if (!_less && !_greater)
+                    {
+                        ((dictionary_node<k, t>*)root_node)->data = data;
+                        return root_node;
+                    }
+
+                    else if (_less)
+                    {
+                        if (root_node->left != 0)
+                            root_node = root_node->left;
+                        else
+                        {
+                            node* new_node = new dictionary_node<k, t>(key, data, root_node);
+                            root_node->left = new_node;
+                            adjust_add(new_node);
+                            return new_node;
+                        }
+                    }
+
+                    else
+                    {
+                        if (root_node->right != 0)
+                            root_node = root_node->right;
+                        else
+                        {
+                            node* new_node = new dictionary_node<k, t>(key, data, root_node);
+                            root_node->right = new_node;
+                            adjust_add(new_node);
+                            return new_node;
+                        }
+                    }
+                }
+            }
+        }
+
+        void erase(const k& key)
+        {
+            wait w(*this);
+
+            node* root_node = header.parent;
+
+            for (; ; )
+            {
+                if (root_node == 0) throw entry_not_found_exception();
+
+                bool _less = less()(key, ((dictionary_node<k, t>*)root_node)->key);
+                bool _greater = less()(((dictionary_node<k, t>*)root_node)->key, key);
+
+                if (_less)
+                    root_node = root_node->left;
+
+                else if (_greater)
+                    root_node = root_node->right;
+
+                else // Item is found
+                {
+                    if (root_node->left != 0 && root_node->right != 0)
+                    {
+                        node* replace = root_node->left;
+                        while (replace->right != 0) replace = replace->right;
+                        swap_nodes(root_node, replace);
+                    }
+
+                    node* parent = root_node->parent;
+
+                    long long from = (parent->left == root_node) ? direction::from_left : direction::from_right;
+
+                    if (root_node->left == 0)
+                    {
+                        if (parent == &header)
+                            header.parent = root_node->right;
+                        else if (from == direction::from_left)
+                            parent->left = root_node->right;
+                        else
+                            parent->right = root_node->right;
+
+                        if (root_node->right != 0) root_node->right->parent = parent;
+                    }
+                    else
+                    {
+                        if (parent == &header)
+                            header.parent = root_node->left;
+                        else if (from == direction::from_left)
+                            parent->left = root_node->left;
+                        else
+                            parent->right = root_node->left;
+
+                        if (root_node->left != 0) root_node->left->parent = parent;
+                    }
+
+                    adjust_remove(parent, from);
+                    delete (dictionary_node<k, t>*)root_node;
+                    break;
+                }
+            }
+        }
+
+        const t& operator[](const k& key) const { return find(key).value(); }
+
+        struct reference
+        {
+
+            dictionary* pdictionary;
+            const k* key;
+
+            reference(dictionary& dictionary_set, const k& key_set) : pdictionary(&dictionary_set), key(&key_set) {}
+
+            reference& operator=(const t& value)
+            {
+                pdictionary->insert(*key, value);
+                return *this;
+            }
+
+            operator t& () const
+            {
+                iterator i = pdictionary->find(*key);
+                return i.value();
+            }
+        };
+
+        reference operator[](const k& key) { return reference(*this, key); }
+
+        dictionary& operator>>(const k& key) { erase(key); return *this; }
+
+        iterator find(const k& key) const
+        {
+            wait w(*this);
+
+            if (!header.parent)
+                throw entry_not_found_exception();
+            else
+            {
+                const node* search_node = header.parent;
+
+                do
+                {
+                    bool _less = less()(key, ((dictionary_node<k, t>*)search_node)->key);
+                    if (_less) { search_node = search_node->left; continue; }
+                    bool _greater = less()(((dictionary_node<k, t>*)search_node)->key, key);
+                    if (_greater) search_node = search_node->right;
+                    else break;
+                } while (search_node);
+
+                if (search_node == 0) throw entry_not_found_exception();
+
+                return (node*)search_node;
+            }
+        }
+
+        bool contains(const k& key)
+        {
+            wait w(*this);
+            try
+            {
+                iterator i = find(key);
+                return true;
+            }
+            catch (...) { return false; }
+        }
+
+        void erase()
+        {
+            wait w(*this);
+            destroy((dictionary_node<k, t>*)header.parent);
+            header.left = &header;
+            header.right = &header;
+            header.parent = 0;
+        }
+
+        iterator after(const k& key) const
+        {
+            wait w(*this);
+
+            const node* y = &header;
+            const node* x = header.parent;
+
+            while (x != 0)
+                if (less()(key, ((dictionary_node<k, t>*)x)->key))
+                {
+                    y = x; x = x->left;
+                }
+                else
+                    x = x->right;
+
+            return (node*)y;
+        }
+
+        iterator after_equals(const k& key) const
+        {
+            wait w(*this);
+
+            const node* y = &header;
+            const node* x = header.parent;
+
+            while (x != 0)
+            {
+                bool _less = less()(key, ((dictionary_node<k, t>*)x)->key);
+                bool _greater = less()(((dictionary_node<k, t>*)x)->key, key);
+                if (!_less && !_greater)
+                {
+                    y = x; break;
+                }
+                else if (_less)
+                {
+                    y = x; x = x->left;
+                }
+                else
+                    x = x->right;
+            }
+
+            return (node*)y;
+        }
+
+        iterator before(const k& key) const
+        {
+            wait w(*this);
+
+            const node* y = &header;
+            const node* x = header.parent;
+
+            while (x != 0)
+                if (!less()(((dictionary_node<k, t>*)x)->key, key))
+                {
+                    x = x->left;
+                }
+                else
+                {
+                    y = x; x = x->right;
+                }
+
+            return (node*)y;
+        }
+
+        iterator before_equals(const k& key) const
+        {
+            wait w(*this);
+
+            const node* y = &header;
+            const node* x = header.parent;
+
+            while (x != 0)
+            {
+                bool _less = less()(key, ((dictionary_node<k, t>*)x)->key);
+                bool _greater = less()(((dictionary_node<k, t>*)x)->key, key);
+                if (!_less && !_greater)
+                {
+                    y = x; break;
+                }
+                else if (less)
+                    x = x->left;
+                else
+                {
+                    y = x; x = x->right;
+                }
+            }
+
+            return (node*)y;
+        }
+
+        iterator last() const { wait w(*this); return header.right; }
+
+        long long depth() const { wait w(*this); return depth(header.parent); }
+
+        node* get_first()
+        {
+            if (!header.parent)
+                return &header;
+
+            else
+            {
+                node* search_node = header.parent;
+                while (search_node->left) search_node = search_node->left;
+                return search_node;
+            }
+        }
+
+        node* get_last()
+        {
+            if (!header.parent)
+                return &header;
+
+            else
+            {
+                node* search_node = header.parent;
+                while (search_node->right) search_node = search_node->right;
+                return search_node;
+            }
+        }
+
+        void destroy(dictionary_node<k, t>* root_node)
+        {
+            if (root_node)
+            {
+                if (root_node->left)
+                    destroy((dictionary_node<k, t>*)root_node->left);
+
+                if (root_node->right)
+                    destroy((dictionary_node<k, t>*)root_node->right);
+
+                delete root_node;
+            }
+        }
+    };
+
+    export template<class k, class t, class less = less<t>>
+        inline oarchive& operator<<(oarchive& s, const dictionary<k, t, less>& o)
+    {
+        wait w(o);
+
+        s << o.length();
+        dictionary_iterator<k, t> e = o.end();
+        dictionary_iterator<k, t> l = e - 1;
+        for (dictionary_iterator<k, t> i = o.begin(); i != e; ++i)
+        {
+            s << *i;
+        }
+        return s;
+    }
+
+    export template<class k, class t, class less = less<t>>
+        inline iarchive& operator>>(iarchive& s, dictionary<k, t, less>& o)
+    {
+        wait w(o);
+
+        long long length;
+        s >> length;
+        for (long long i = 0; i < length; i++)
+        {
+            key_value<k, t> _t;
+            s >> _t;
+            o << _t;
+        }
+        return s;
+    }
+
+    export template<class k, class t, class less = less<t>>
+        inline std::ostream& operator<<(std::ostream& s, const dictionary<k, t, less>& o)
+    {
+        wait w(o);
+
+        s << string(L"{");
+        dictionary_iterator<k, t> e = o.end();
+        dictionary_iterator<k, t> l = e - 1;
+        for (dictionary_iterator<k, t> i = o.begin(); i != e; ++i)
+        {
+            s << "(" << i.key() << "," << i.value() << string(")"); if (i != l) s << string(L",");
+        }
+        s << string(L"}");
+        return s;
+    }
+
+    export template<class k, class t, class less = less<t>>
+        inline std::wostream& operator<<(std::wostream& s, const dictionary<k, t, less>& o)
+    {
+        wait w(o);
+
+        s << string(L"{");
+        dictionary_iterator<k, t> e = o.end();
+        dictionary_iterator<k, t> l = e - 1;
+        for (dictionary_iterator<k, t> i = o.begin(); i != e; ++i)
+        {
+            s << "(" << i.key() << "," << i.value() << string(L")"); if (i != l) s << string(L",");
+        }
+        s << string(L"}");
+        return s;
+    }
+
+    export template <class t>
+        struct array : public dictionary<long long, t>
+    {
+        typedef array_iterator<t> iterator;
+
+        iterator begin() const { return dictionary<long long, t>::header.left; }
+
+        iterator end() const { return (node*)&(dictionary<long long, t>::header); }
+
+        array() {}
+
+        array(long long count, const t* values)
+        {
+            for (int i = 0; i < count, i++; ) this << values[i];
+        }
+
+        template<class I>
+        array(I first, I last)
+        {
+            while (first != last) insert(*first++);
+        }
+
+        array(std::initializer_list<t> l)
+        {
+            for (t _t : l) insert(_t);
+        }
+
+        void insert(const t& data)
+        {
+            set_iterator<key_value<long long, t>> _last = set<key_value<long long, t>>::last();
+            if (_last.is_header())
+                dictionary<long long, t>::insert(0, data);
+            else
+            {
+                dictionary<long long, t>::insert(_last->key + 1, data);
+            }
+        }
+
+        array& operator>>(long long key) { dictionary<long long, t>::erase(key); return *this; }
+
+        array& operator<<(const t& _t)
+        {
+            push(_t);
+            return *this;
+        }
+
+        array& operator>>(t& _t)
+        {
+            _t = pop();
+            return *this;
+        }
+
+        void push(const t& data)
+        {
+            wait w(*this);
+
+            dictionary_iterator<long long, t> i = dictionary<long long, t>::last();
+            i--;
+            if (i.is_header())
+                (*this)[0] = data;
+            else
+                (*this)[(*i).key + 1] = data;
+        }
+
+        t pop()
+        {
+            wait w(*this);
+
+            dictionary_iterator<long long, t> i = dictionary<long long, t>::last();
+            if (i.is_header())
+                throw entry_not_found_exception();
+            else
+            {
+                t r = (*i).value;
+                dictionary<long long, t>::erase((*i).key);
+                return r;
+            }
+        }
+
+        bool contiguous() const
+        {
+            wait w(*this);
+
+            long long l = set<key_value, long long, t >> ::length();
+            if (l == 0) return true;
+            set_iterator<key_value<long long, t>> i = set<key_value<long long, t>>::last();
+            long long k = (*i).key;
+            return l == k + 1;
+        }
+    };
+
+    export template<class t>
+        inline std::ostream& operator<<(std::ostream& s, const array<t>& o)
+    {
+        wait w(o);
+        s << string(L"{");
+        array_iterator<t> e = o.end();
+        array_iterator<t> l = e - 1;
+        for (array_iterator<t> i = o.begin(); i != e; ++i)
+        {
+            s << *i; if (i != l) s << string(L",");
+        }
+        s << string(L"}");
+        return s;
+    }
+
+    export template<class t>
+        inline std::wostream& operator<<(std::wostream& s, const array<t>& o)
+    {
+        wait w(o);
+
+        s << string(L"{");
+        array_iterator<t> e = o.end();
+        array_iterator<t> l = e - 1;
+        for (array_iterator<t> i = o.begin(); i != e; ++i)
+        {
+            s << *i; if (i != l) s << string(L",");
+        }
+        s << string(L"}");
+        return s;
+    }
+
+    export template<class t>
+        oarchive& operator<<(oarchive& s, const array<t>& o)
+    {
+        wait w(o);
+
+        s << o.length();
+        array_iterator<t> e = o.end();
+        for (array_iterator<t> i = o.begin(); i != e; ++i)
+        {
+            s << *i;
+        }
+        return s;
+    }
+
+
+    export template<class t>
+        iarchive& operator>>(iarchive& s, array<t>& o)
+    {
+        wait w(o);
+
+        long long length;
+        s >> length;
+        for (long long i = 0; i < length; i++)
+        {
+            t _t;
+            s >> _t;
+            o << _t;
+        }
+        return s;
+    }
+
+    export template <class k, class t, class compare, class less = core::less<t>>
+        struct tree : public set< t, less>
+    {
+        typedef set_iterator<t> iterator;
+
+        tree() {}
+
+        tree(std::initializer_list<t> l)
+        {
+            for (t _t : l) insert(_t);
+        }
+
+        t& operator[](const k& key)
+        {
+            iterator i = find(key);
+            return *i;
+        }
+
+        void erase(const k& key)
+        {
+            wait w(*this);
+
+            node* root_node = set<t, less>::header.parent;
+
+            for (; ; )
+            {
+                if (root_node == 0) throw entry_not_found_exception();
+
+                int result = compare()(key, ((set_node<t>*)root_node)->element);
+
+                if (result < 0)
+                    root_node = root_node->left;
+
+                else if (result > 0)
+                    root_node = root_node->right;
+
+                else // Item is found
+                {
+                    if (root_node->left != 0 && root_node->right != 0)
+                    {
+                        node* replace = root_node->left;
+                        while (replace->right != 0) replace = replace->right;
+                        swap_nodes(root_node, replace);
+                    }
+
+                    node* parent = root_node->parent;
+
+                    long long from = (parent->left == root_node) ? direction::from_left : direction::from_right;
+
+                    if (root_node->left == 0)
+                    {
+                        if (parent == &(set<t, less>::header))
+                            set<t, less>::header.parent = root_node->right;
+                        else if (from == direction::from_left)
+                            parent->left = root_node->right;
+                        else
+                            parent->right = root_node->right;
+
+                        if (root_node->right != 0) root_node->right->parent = parent;
+                    }
+                    else
+                    {
+                        if (parent == &(set<t, less>::header))
+                            set<t, less>::header.parent = root_node->left;
+                        else if (from == direction::from_left)
+                            parent->left = root_node->left;
+                        else
+                            parent->right = root_node->left;
+
+                        if (root_node->left != 0) root_node->left->parent = parent;
+                    }
+
+                    adjust_remove(parent, from);
+                    delete (set_node<t>*)root_node;
+                    break;
+                }
+            }
+        }
+
+        bool contains(const k& key) const
+        {
+            wait w(*this);
+
+            if (!set<t, less>::header.parent)
+                return false;
+            else
+            {
+                const node* search_node = set<t, less>::header.parent;
+
+                do
+                {
+                    int result = compare()(key, ((set_node<t>*)search_node)->element);
+
+                    if (result < 0) search_node = search_node->left;
+
+                    else if (result > 0) search_node = search_node->right;
+
+                    else break;
+
+                } while (search_node);
+
+                if (search_node == 0) return false; else return true;
+            }
+        }
+
+        iterator find(const k& key) const
+        {
+            wait w(*this);
+
+            if (!set<t, less>::header.parent)
+                throw entry_not_found_exception();
+            else
+            {
+                const node* search_node = set<t, less>::header.parent;
+
+                do
+                {
+                    int result = compare()(key, ((set_node<t>*)search_node)->element);
+
+                    if (result < 0) search_node = search_node->left;
+
+                    else if (result > 0) search_node = search_node->right;
+
+                    else break;
+
+                } while (search_node);
+
+                if (search_node == 0) throw entry_not_found_exception();
+
+                return (node*)search_node;
+            }
+        }
+
+        t* locate(const k& key) const
+        {
+            wait w(*this);
+
+            if (!set<t, less>::header.parent)
+                return 0;
+            else
+            {
+                const node* search_node = set<t, less>::header.parent;
+
+                do
+                {
+                    int result = compare()(key, ((set_node<t>*)search_node)->element);
+
+                    if (result < 0) search_node = search_node->left;
+
+                    else if (result > 0) search_node = search_node->right;
+
+                    else break;
+
+                } while (search_node);
+
+                if (search_node == 0) return 0;
+
+                return &((set_node<t>*)search_node)->element;
+            }
+        }
+    };
+
+    export template<class k, class t, class compare, class less = core::less<t>>
+        oarchive& operator<<(oarchive& s, const tree<k, t, compare, less>& o)
+    {
+        wait w(o);
+
+        s << o.length();
+        set_iterator<t> e = o.end();
+        for (set_iterator<t> i = o.begin(); i != e; ++i)
+        {
+            s << *i;
+        }
+        return s;
+    }
+
+    export template<class k, class t, class compare, class less = core::less<t>>
+        iarchive& operator>>(iarchive& s, tree<k, t, compare, less>& o)
+    {
+        wait w(o);
+
+        long long length;
+        s >> length;
+        for (long long i = 0; i < length; i++)
+        {
+            t _t;
+            s >> _t;
+            o << _t;
+        }
+        return s;
+    }
+
+    export template<class t, class compare = core::compare<t>>
+        oarchive& operator<<(oarchive& s, const linked_list<t, compare> o)
+    {
+        wait w(o);
+
+        s << o.length();
+        for (t _t : o) s << _t;
+        return s;
+    }
+
+    export template<class t, class compare = core::compare<t>>
+        iarchive& operator>>(iarchive& s, linked_list<t, compare>& o)
+    {
+        wait w(o);
+
+        long long length;
+        s >> length;
+        for (long long i = 0; i < length; i++)
+        {
+            t _t;
+            s >> _t;
+            o << _t;
+        }
+        return s;
+    }
+
+    export template<class t, class compare = core::compare<t>>
+        oarchive& operator<<(oarchive& s, const list<t, compare> o)
+    {
+        wait w(o);
+
+        s << o.length();
+        for (t _t : o) s << _t;
+        return s;
+    }
+
+    export template<class t, class compare = core::compare<t>>
+        iarchive& operator>>(iarchive& s, list<t, compare>& o)
+    {
+        wait w(o);
+
+        long long length;
+        s >> length;
+        for (long long i = 0; i < length; i++)
+        {
+            t _t;
+            s >> _t;
+            o << _t;
+        }
+        return s;
+    }
+}
+
 namespace database
 {
     struct node
@@ -44663,7 +47331,7 @@ namespace database
         return message;
     }
 
-    core::dictionary<void*, long long> file_reference;
+    threaded::dictionary<void*, long long> file_reference;
 
     export struct file
     {
@@ -44962,7 +47630,7 @@ namespace database
         bool is_header() { return balance == state::header; }
     };
 
-    core::dictionary<file*, long long> heap_references;
+    threaded::dictionary<file*, long long> heap_references;
 
     struct heap
     {
@@ -45599,7 +48267,7 @@ namespace database
         }
     }
 
-    core::dictionary<heap*, long long> heap_reference_counter;
+    threaded::dictionary<heap*, long long> heap_reference_counter;
 
     struct heap_multiset
     {
@@ -46793,7 +49461,7 @@ namespace database
         }
     };
 
-    core::dictionary<node_file*, long long> data_reference_count;
+    threaded::dictionary<node_file*, long long> data_reference_count;
 
     template <class t>
     struct data_file
@@ -46936,7 +49604,7 @@ namespace database
         }
     };
 
-    core::dictionary<handle, long long> lock_reference;
+    threaded::dictionary<handle, long long> lock_reference;
 
     struct lock
     {
@@ -48738,7 +51406,7 @@ namespace database
         s << L"}";
         return s;
     }
-    
+
 }
 
 export extern "C" inline int loop()
