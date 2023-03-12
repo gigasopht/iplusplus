@@ -3,7 +3,39 @@
 import iplusplus;
 using namespace core;
 
-#include "DeviceCapabilities.hpp"
+struct capability_entry
+{
+    int index;
+    character* label;
+    character* description;
+};
+
+capability_entry capabilities[] =
+{
+  capability::horizontal_size,       (character*)L"capability::horizontal_size",        (character*)L"Width in millimeters:",
+  capability::vertical_size,         (character*)L"capability::vertical_size",          (character*)L"Height in millimeters:",
+  capability::horizontal_resolution, (character*)L"capability::horizontal_resolution",  (character*)L"Width in pixels:",
+  capability::vertical_resolution,   (character*)L"capability::vertical_resolution",    (character*)L"Height in raster lines:",
+  capability::bits_pixel,            (character*)L"capability::bits_pixel",             (character*)L"Color bits per pixel:",
+  capability::planes,                (character*)L"capability::planes",                 (character*)L"Number of color planes:",
+  capability::brushes,               (character*)L"capability::brushes",                (character*)L"Number of device brushes:",
+  capability::pens,                  (character*)L"capability::pens",                   (character*)L"Number of device pens:",
+  capability::markers,               (character*)L"capability::markers",                (character*)L"Number of device markers:",
+  capability::fonts,                 (character*)L"capability::fonts",                  (character*)L"Number of device fonts:",
+  capability::colors,                (character*)L"capability::colors",                 (character*)L"Number of device colors:",
+  capability::physical_size,         (character*)L"capability::physical_size",          (character*)L"Size of device structure:",
+  capability::aspect_x,              (character*)L"capability::aspect_x",               (character*)L"Relative width of pixel:",
+  capability::aspect_y,              (character*)L"capability::aspect_y",               (character*)L"Relative height of pixel:",
+  capability::aspect_xy,             (character*)L"capability::aspect_xy",              (character*)L"Relative diagonal of pixel:",
+  capability::logical_pixels_x,      (character*)L"capability::logical_pixels_x",       (character*)L"Horizontal dots per inch:",
+  capability::logical_pixels_y,      (character*)L"capability::logical_pixels_y",       (character*)L"Vertical dots per inch:",
+  capability::palette_size,          (character*)L"capability::palette_size",           (character*)L"Number of palette entries:",
+  capability::palette_reserved,      (character*)L"capability::palette_reserved",       (character*)L"Reserved palette entries:",
+  capability::color_resolution,      (character*)L"capability::color_resolution",       (character*)L"Actual color resolution:"
+};
+
+enum { lines = sizeof(capabilities) / sizeof(capabilities[0]) };
+
 
 enum { column1 = 30, column2 = 40 };
 

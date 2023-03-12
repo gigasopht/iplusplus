@@ -139,9 +139,6 @@
   <ItemGroup>
     <ClCompile Include="DeviceCapabilities.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="DeviceCapabilities.hpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

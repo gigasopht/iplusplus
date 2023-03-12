@@ -19,7 +19,7 @@ int __stdcall WinMain(handle module_handle,
     wclass.module = module_handle;
     wclass.icon = load_icon(0, (const character*)icon_identity::application);
     wclass.cursor = load_cursor(0, (const character*)cursor_identity::arrow);
-    wclass.brush = (handle)get_standard_object(standard_brush::light_gray);
+    wclass.brush = get_standard_object(standard_brush::light_gray);
     wclass.name = L"example";
 
     atom atom_name = register_class(&wclass);

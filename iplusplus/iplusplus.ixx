@@ -3902,7 +3902,7 @@ namespace core
         }
     };
 
-    export struct entry
+    export struct archive_entry
     {
         union
         {
@@ -3922,74 +3922,74 @@ namespace core
             bool _bool;
         } data;
 
-        entry() {}
+        archive_entry() {}
 
-        entry(char c)
+        archive_entry(char c)
         {
             data._char = c;
         }
 
-        entry(wchar_t c)
+        archive_entry(wchar_t c)
         {
             data._wchar_t = c;
         }
 
-        entry(unsigned char uc)
+        archive_entry(unsigned char uc)
         {
             data._byte = uc;
         }
 
-        entry(short s)
+        archive_entry(short s)
         {
             data._short = s;
         }
 
-        entry(unsigned short us)
+        archive_entry(unsigned short us)
         {
             data._ushort = us;
         }
 
-        entry(int i)
+        archive_entry(int i)
         {
             data._int = i;
         }
 
-        entry(unsigned u)
+        archive_entry(unsigned u)
         {
             data._unsigned = u;
         }
 
-        entry(float f)
+        archive_entry(float f)
         {
             data._float = f;
         }
 
-        entry(double d)
+        archive_entry(double d)
         {
             data._double = d;
         }
 
-        entry(long l)
+        archive_entry(long l)
         {
             data._long = l;
         }
 
-        entry(unsigned long ul)
+        archive_entry(unsigned long ul)
         {
             data._ulong = ul;
         }
 
-        entry(long long l)
+        archive_entry(long long l)
         {
             data._longlong = l;
         }
 
-        entry(unsigned long long ul)
+        archive_entry(unsigned long long ul)
         {
             data._ulonglong = ul;
         }
 
-        entry(bool b)
+        archive_entry(bool b)
         {
             data._bool = b;
         }
@@ -4001,99 +4001,99 @@ namespace core
 
     export struct oarchive
     {
-        list<entry> data;
+        list<archive_entry> data;
 
         oarchive& operator<<(char c)
         {
-            data << entry(c);
+            data << archive_entry(c);
             return *this;
         }
 
         oarchive& operator<<(wchar_t c)
         {
-            data << entry(c);
+            data << archive_entry(c);
             return *this;
         }
 
         oarchive& operator<<(unsigned char uc)
         {
-            data << entry(uc);
+            data << archive_entry(uc);
             return *this;
         }
 
         oarchive& operator<<(short s)
         {
-            data << entry(s);
+            data << archive_entry(s);
             return *this;
         }
 
         oarchive& operator<<(unsigned short us)
         {
-            data << entry(us);
+            data << archive_entry(us);
             return *this;
         }
 
         oarchive& operator<<(int i)
         {
-            data << entry(i);
+            data << archive_entry(i);
             return *this;
         }
 
         oarchive& operator<<(unsigned u)
         {
-            data << entry(u);
+            data << archive_entry(u);
             return *this;
         }
 
         oarchive& operator<<(float f)
         {
-            data << entry(f);
+            data << archive_entry(f);
             return *this;
         }
 
         oarchive& operator<<(double d)
         {
-            data << entry(d);
+            data << archive_entry(d);
             return *this;
         }
 
         oarchive& operator<<(long l)
         {
-            data << entry(l);
+            data << archive_entry(l);
             return *this;
         }
 
         oarchive& operator<<(unsigned long ul)
         {
-            data << entry(ul);
+            data << archive_entry(ul);
             return *this;
         }
 
         oarchive& operator<<(long long l)
         {
-            data << entry(l);
+            data << archive_entry(l);
             return *this;
         }
 
         oarchive& operator<<(unsigned long long ul)
         {
-            data << entry(ul);
+            data << archive_entry(ul);
             return *this;
         }
 
         oarchive& operator<<(bool b)
         {
-            data << entry(b);
+            data << archive_entry(b);
             return *this;
         }
 
         void* allocate()
         {
             long long size = data.length();
-            entry* buffer = (entry*)allocate_from_heap((size + 1) * sizeof(entry));
-            buffer[0].data._longlong = (size + 1) * sizeof(entry);
+            archive_entry* buffer = (archive_entry*)allocate_from_heap((size + 1) * sizeof(archive_entry));
+            buffer[0].data._longlong = (size + 1) * sizeof(archive_entry);
             long long l = 0;
-            for (entry e : data)
+            for (archive_entry e : data)
             {
                 buffer[l + 1].data = e.data;
                 l++;
@@ -4106,10 +4106,10 @@ namespace core
 
     export struct iarchive
     {
-        entry* buffer;
+        archive_entry* buffer;
         long long offset;
 
-        iarchive(void* b = 0) : offset(0), buffer((entry*)b) {  }
+        iarchive(void* b = 0) : offset(0), buffer((archive_entry*)b) {  }
 
         iarchive& operator>>(char& c)
         {
@@ -6289,7 +6289,6 @@ namespace core
         s << "}";
         return s;
     }
-
 
     export template<class k, class t>
         struct dictionary_node : public node
@@ -8492,6 +8491,8 @@ namespace core
         }
 
     };
+
+    // *** win+
 
     export  typedef void* handle;
     export  typedef wchar_t character;
