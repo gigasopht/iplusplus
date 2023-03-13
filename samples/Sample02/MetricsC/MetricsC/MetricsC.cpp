@@ -1,4 +1,4 @@
-// win+ -- MetricsA.cpp -- System Metrics A
+// win+ -- MetricsC.cpp -- System Metrics C
 
 import iplusplus;
 using namespace core;
